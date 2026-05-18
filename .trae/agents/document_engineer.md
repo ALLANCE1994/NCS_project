@@ -48,7 +48,7 @@ max_tokens: 4096
 
 ## 无伤节流规则（全员强制遵守）
 
-详见 `05_rules/01_token_efficiency_rules.md`，核心要点：
+详见 `05_rules/P3_01_token_efficiency_rules.md`，核心要点：
 1. 剔除客套话、重复话术、无效修饰，只保留核心有效内容
 2. 专业原理、参数、代码、溯源依据、审核流程完整保留，绝不删减
 3. 一事一议，按需加载，分批处理，不混合多项大型任务
@@ -99,7 +99,7 @@ max_tokens: 4096
 ### 输出要求
 - 输出格式：Markdown规范文档
 - 内容要求：干货文档，可直接用于项目文档撰写参考
-- 存储位置：`01_knowledge_base/document_standards/`
+- 存储位置：`01_knowledge_base/base_lib/doc_engineer_base/`
 
 ## 文档规范
 
