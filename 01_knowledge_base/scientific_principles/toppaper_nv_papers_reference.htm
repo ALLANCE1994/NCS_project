@@ -1,0 +1,5491 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline' data:">
+		<title>Zotero 报告</title>
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSB7Cgljb2xvci1zY2hlbWU6IGxpZ2h0IGRhcms7CgkvKiBUaGVzZSBzaG91bGQgYmUgdGhlIGRlZmF1bHRzLCBidXQganVzdCBpbiBjYXNlOiAqLwoJYmFja2dyb3VuZDogQ2FudmFzOwoJY29sb3I6IENhbnZhc1RleHQ7Cn0KCmEgewoJdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7Cn0KCmJvZHkgewoJcGFkZGluZzogMDsKfQoKdWwucmVwb3J0IGxpLml0ZW0gewoJYm9yZGVyLXRvcDogNHB4IHNvbGlkICM1NTU7CglwYWRkaW5nLXRvcDogMWVtOwoJcGFkZGluZy1sZWZ0OiAxZW07CglwYWRkaW5nLXJpZ2h0OiAxZW07CgltYXJnaW4tYm90dG9tOiAyZW07Cn0KCmgxLCBoMiwgaDMsIGg0LCBoNSwgaDYgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDIgewoJbWFyZ2luOiAwIDAgLjVlbTsKfQoKaDIucGFyZW50SXRlbSB7Cglmb250LXdlaWdodDogNjAwOwoJZm9udC1zaXplOiAxZW07CglwYWRkaW5nOiAwIDAgLjVlbTsKCWJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjOwp9CgovKiBJZiBjb21iaW5pbmcgY2hpbGRyZW4sIGRpc3BsYXkgcGFyZW50IHNsaWdodGx5IGxhcmdlciAqLwp1bC5yZXBvcnQuY29tYmluZUNoaWxkSXRlbXMgaDIucGFyZW50SXRlbSB7Cglmb250LXNpemU6IDEuMWVtOwoJcGFkZGluZy1ib3R0b206IC43NWVtOwoJbWFyZ2luLWJvdHRvbTogLjRlbTsKfQoKaDIucGFyZW50SXRlbSAudGl0bGUgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDMgewoJbWFyZ2luLWJvdHRvbTogLjZlbTsKCWZvbnQtd2VpZ2h0OiA2MDAgIWltcG9ydGFudDsKCWZvbnQtc2l6ZTogMWVtOwoJZGlzcGxheTogYmxvY2s7Cn0KCi8qIE1ldGFkYXRhIHRhYmxlICovCnRoIHsKCXZlcnRpY2FsLWFsaWduOiB0b3A7Cgl0ZXh0LWFsaWduOiByaWdodDsKCXdpZHRoOiAxNSU7Cgl3aGl0ZS1zcGFjZTogbm93cmFwOwp9Cgp0ZCB7CglwYWRkaW5nLWxlZnQ6IC41ZW07Cn0KCgp1bC5yZXBvcnQsIHVsLm5vdGVzLCB1bC50YWdzIHsKCWxpc3Qtc3R5bGU6IG5vbmU7CgltYXJnaW4tbGVmdDogMDsKCXBhZGRpbmctbGVmdDogMDsKfQoKLyogVGFncyAqLwpoMy50YWdzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLnRhZ3MgewoJbGluZS1oZWlnaHQ6IDEuNzVlbTsKCWxpc3Qtc3R5bGU6IG5vbmU7Cn0KCnVsLnRhZ3MgbGkgewoJZGlzcGxheTogaW5saW5lOwp9Cgp1bC50YWdzIGxpOm5vdCg6bGFzdC1jaGlsZCk6YWZ0ZXIgewoJY29udGVudDogJywgJzsKfQoKCi8qIENoaWxkIG5vdGVzICovCmgzLm5vdGVzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLm5vdGVzIHsKCW1hcmdpbi1ib3R0b206IDEuMmVtOwp9Cgp1bC5ub3RlcyA+IGxpOmZpcnN0LWNoaWxkIHAgewoJbWFyZ2luLXRvcDogMDsKfQoKdWwubm90ZXMgPiBsaSB7CglwYWRkaW5nOiAuN2VtIDA7Cn0KCnVsLm5vdGVzID4gbGk6bm90KDpsYXN0LWNoaWxkKSB7Cglib3JkZXItYm90dG9tOiAxcHggI2NjYyBzb2xpZDsKfQoKCnVsLm5vdGVzID4gbGkgcDpmaXJzdC1jaGlsZCB7CgltYXJnaW4tdG9wOiAwOwp9Cgp1bC5ub3RlcyA+IGxpIHA6bGFzdC1jaGlsZCB7CgltYXJnaW4tYm90dG9tOiAwOwp9CgovKiBBZGQgcXVvdGF0aW9uIG1hcmtzIGFyb3VuZCBibG9ja3F1b3RlICovCnVsLm5vdGVzID4gbGkgYmxvY2txdW90ZSBwOm5vdCg6ZW1wdHkpOmJlZm9yZSwKbGkubm90ZSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6YmVmb3JlIHsKCWNvbnRlbnQ6ICfigJwnOwp9Cgp1bC5ub3RlcyA+IGxpIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyLApsaS5ub3RlIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyIHsKCWNvbnRlbnQ6ICfigJ0nOwp9CgovKiBQcmVzZXJ2ZSB3aGl0ZXNwYWNlIG9uIHBsYWludGV4dCBub3RlcyAqLwp1bC5ub3RlcyBsaSBwLnBsYWludGV4dCwgbGkubm90ZSBwLnBsYWludGV4dCwgZGl2Lm5vdGUgcC5wbGFpbnRleHQgewoJd2hpdGUtc3BhY2U6IHByZS13cmFwOwp9CgovKiBEaXNwbGF5IHRhZ3Mgd2l0aGluIGNoaWxkIG5vdGVzIGlubGluZSAqLwp1bC5ub3RlcyBoMy50YWdzIHsKCWRpc3BsYXk6IGlubGluZTsKCWZvbnQtc2l6ZTogMWVtOwp9Cgp1bC5ub3RlcyBoMy50YWdzOmFmdGVyIHsKCWNvbnRlbnQ6ICcgJzsKfQoKdWwubm90ZXMgdWwudGFncyB7CglkaXNwbGF5OiBpbmxpbmU7Cn0KCnVsLm5vdGVzIHVsLnRhZ3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlciB7Cgljb250ZW50OiAnLCAnOwp9CgoKLyogQ2hpbGQgYXR0YWNobWVudHMgKi8KaDMuYXR0YWNobWVudHMgewoJZm9udC1zaXplOiAxLjFlbTsKfQoKdWwuYXR0YWNobWVudHMgbGkgewoJcGFkZGluZy10b3A6IC41ZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHsKCW1hcmdpbi1sZWZ0OiAyZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHA6Zmlyc3QtY2hpbGQgewoJbWFyZ2luLXRvcDogLjc1ZW07Cn0KCmRpdiB0YWJsZSB7Cglib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOwp9CgpkaXYgdGFibGUgdGQsIGRpdiB0YWJsZSB0aCB7Cglib3JkZXI6IDFweCAjY2NjIHNvbGlkOwoJYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsKCXdvcmQtYnJlYWs6IGJyZWFrLWFsbDsKfQoKZGl2IHRhYmxlIHRkIHA6ZW1wdHk6OmFmdGVyLCBkaXYgdGFibGUgdGggcDplbXB0eTo6YWZ0ZXIgewoJY29udGVudDogIlwwMGEwIjsKfQoKZGl2IHRhYmxlIHRkICo6Zmlyc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmZpcnN0LWNoaWxkIHsKCW1hcmdpbi10b3A6IDA7Cn0KCmRpdiB0YWJsZSB0ZCAqOmxhc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmxhc3QtY2hpbGQgewoJbWFyZ2luLWJvdHRvbTogMDsKfQo=">
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="data:text/css;base64,LyogR2VuZXJpYyBzdHlsZXMgKi8KYm9keSB7Cglmb250OiA2Mi41JSBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cgl3aWR0aDogNzgwcHg7CgltYXJnaW46IDAgYXV0bzsKfQoKaDIgewoJZm9udC1zaXplOiAxLjVlbTsKCWxpbmUtaGVpZ2h0OiAxLjVlbTsKCWZvbnQtZmFtaWx5OiBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cn0KCnAgewoJbGluZS1oZWlnaHQ6IDEuNWVtOwp9CgphOmFueS1saW5rIHsKCWNvbG9yOiAjOTAwOwp9CgphOmhvdmVyLCBhOmFjdGl2ZSB7Cgljb2xvcjogIzc3NzsKfQoKQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykgewoJYTphbnktbGluayB7CgkJY29sb3I6ICNmMDA7Cgl9CgoJYTpob3ZlciwgYTphY3RpdmUgewoJCWNvbG9yOiAjOTk5OwoJfQp9CgoKdWwucmVwb3J0IHsKCWZvbnQtc2l6ZTogMS40ZW07Cgl3aWR0aDogNjgwcHg7CgltYXJnaW46IDAgYXV0bzsKCXBhZGRpbmc6IDIwcHggMjBweDsKfQoKLyogTWV0YWRhdGEgdGFibGUgKi8KdGFibGUgewoJYm9yZGVyOiAxcHggI2NjYyBzb2xpZDsKCW92ZXJmbG93OiBhdXRvOwoJd2lkdGg6IDEwMCU7CgltYXJnaW46IC4xZW0gYXV0byAuNzVlbTsKCXBhZGRpbmc6IDAuNWVtOwp9Cg==">
+		<link rel="stylesheet" type="text/css" media="print" href="data:text/css;base64,Ym9keSB7Cglmb250OiAxMnB0ICJUaW1lcyBOZXcgUm9tYW4iLCBUaW1lcywgR2VvcmdpYSwgc2VyaWY7CgltYXJnaW46IDA7Cgl3aWR0aDogYXV0bzsKfQoKLyogUGFnZSBCcmVha3MgKHBhZ2UtYnJlYWstaW5zaWRlIG9ubHkgcmVjb2duaXplZCBieSBPcGVyYSkgKi8KaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7CglwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDsKCXBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDsKfQoKdWwsIG9sLCBkbCB7CglwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQ7Cgljb2xvci1hZGp1c3Q6IGV4YWN0Owp9CgpoMiB7Cglmb250LXNpemU6IDEuM2VtOwoJbGluZS1oZWlnaHQ6IDEuM2VtOwp9CgphIHsKCWNvbG9yOiBpbmhlcml0OwoJdGV4dC1kZWNvcmF0aW9uOiBub25lOwp9Cg==">
+	</head>
+	<body>
+		<ul class="report combineChildItems">
+			<li id="item_ZF52RICS" class="item journalArticle">
+			<h2>All-optical nuclear quantum sensing using nitrogen-vacancy centers in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Solid state spins have demonstrated significant potential in 
+quantum sensing with applications including fundamental science, medical
+ diagnostics and navigation. The quantum sensing schemes showing best 
+performance under ambient conditions all utilize microwave or 
+radio-frequency driving, which poses a significant limitation for 
+miniaturization, energy efficiency, and non-invasiveness of quantum 
+sensors. We overcome this limitation by demonstrating a purely optical 
+approach to coherent quantum sensing. Our scheme involves the  
+15 
+N nuclear spin of the Nitrogen-Vacancy (NV) center in diamond as a 
+sensing resource, and exploits NV spin dynamics in oblique magnetic 
+fields near the NV's excited state level anti-crossing to optically pump
+ the nuclear spin into a quantum superposition state. We demonstrate 
+all-optical free-induction decay measurements—the key protocol for 
+low-frequency quantum sensing—both on single spins and spin ensembles. 
+Our results pave the way for highly compact quantum sensors to be 
+employed for magnetometry or gyroscopy applications in challenging 
+environments.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-06-10</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s41534-023-00724-6">10.1038/s41534-023-00724-6</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s41534-023-00724-6?utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound">https://
+www.nature.com/articles/s41534-023-00724-6?
+utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2024/3/19 11:23:18</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>8.3</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 28 (Crossref) [2026-02-21]
+Citations: 30 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>9</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>56</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>npj Quantum Information</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2056-6387</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>npj Quantum Inf</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/7/2 10:12:42</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:24:40</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>#duplicate</li>
+					<li>陀螺</li>
+					<li>灵敏度</li>
+					<li>磁力仪</li>
+					<li>Researcher App</li>
+					<li>创新</li>
+					<li>#nosource</li>
+					<li>全光学传感</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_LBU2F6JF">
+<div><div data-schema-version="8"><p><strong><span style="color: rgb(166, 6, 6)">在环境条件下显示出最佳性能的量子传感方案都利用了微波或射频驱动，这对量子传感器的微型化、能效和非侵入性构成了重大限制。</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">我们提出了一种利用金刚石 NV 中心的 15N 核自旋进行相干、无微波量子传感的方法。</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">全光学操作的附加功能是一项关键资产，它可能使未来的集成式高能效 NV 陀螺仪成为可能。</span></strong></p>
+</div></div>
+					</li>
+					<li id="item_TDGANE6C">
+<div><div data-schema-version="8"><p>研究结果</p>
+<p><strong>1 FID对比度和相干时间</strong></p>
+<ul>
+<li>
+<strong>单NV中心</strong>：在最佳条件下，FID对比度达到4.2%，核自旋相干时间T2为248.1±12.4 μs。
+</li>
+<li>
+<strong>NV中心系综</strong>：FID对比度为2.08±0.04%，核自旋相干时间T2延长至508.5±17.4 μs。
+</li>
+</ul>
+<p><strong>2 灵敏度评估</strong></p>
+<p>基于光子散粒噪声限制，评估了单NV中心和NV中心系综在磁测量和陀螺仪应用中的灵敏度：</p>
+<ul>
+<li>
+<strong>单NV中心</strong>：磁测量灵敏度为154 μT Hz^-1/2。
+</li>
+<li>
+<strong>NV中心系综</strong>：在激光功率为100 mW条件下，磁测量灵敏度预计可达1.22 nT Hz-1/2，陀螺仪灵敏度预计为135 hour-1/√Hz。
+</li>
+</ul>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_6PXZ47DC">41534_2023_724_MOESM1_ESM.pdf						<div class="note"><div><p xmlns="http://www.w3.org/1999/xhtml" id="title"><strong>Contents</strong></p><ul xmlns="http://www.w3.org/1999/xhtml" style="list-style-type: none; padding-left:0px" id="toc"><li><a href="zotero://open-pdf/0_6PXZ47DC/2">Contents</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_6PXZ47DC/3">Supplementary Methods</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/3">Effective Nuclear Hamiltonian</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_6PXZ47DC/5">Numerical Model for NV Optical Pumping</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/5">Mathematical Description of the Model</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/8">Matrix Representations of Superoperators</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/10">Details on Simulation Evaluation</a></li></ul></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_6PXZ47DC/11">Supplementary Notes</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/11">Comparison of Rate Constant Parameter Sets</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/13">Orientation of the Effective Magnetic Field</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/14">Experimental Determination of the Magnetic Field and the NV Zero Field Splitting</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/16">Ensemble Diamond Data</a></li></ul></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_6PXZ47DC/17">References</a></li></ul></div>
+					</div>					</li>
+					<li id="item_687IV3E4">Bürgler 等 - 2023 - All-optical nuclear quantum sensing using nitrogen.pdf					</li>
+					<li id="item_6Q4H49C8">Bürgler 等 - 2023 - All-optical nuclear quantum sensing using nitrogen.pdf					</li>
+					<li id="item_79DCLW54">Bürgler 等 - 2023 - All-optical nuclear quantum sensing using nitrogen.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_ZX2U3WS8" class="item journalArticle">
+			<h2>Beating the standard quantum limit under ambient conditions with solid-state spins</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Tianyu Xie</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhiyuan Zhao</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Xi Kong</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Wenchao Ma</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Mengqi Wang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Xiangyu Ye</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Pei Yu</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhiping Yang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Shaoyi Xu</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Pengfei Wang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Ya Wang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fazhan Shi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jiangfeng Du</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Beating the standard quantum limit under ambient conditions 
+with solid-state spins is realized.
+          , 
+            The use of entangled sensors improves the precision limit 
+from the standard quantum limit (SQL) to the Heisenberg limit. Most 
+previous experiments beating the SQL are performed on the sensors that 
+are well isolated under extreme conditions. Here, we demonstrate a 
+sub-SQL interferometer at ambient conditions by using a multispin 
+system, namely, the nitrogen-vacancy (NV) defect in diamond. We achieve 
+two-spin interference with a phase sensitivity of 1.79 ± 0.06 dB beyond 
+the SQL and three-spin interference with a phase sensitivity of 2.77 ± 
+0.10 dB. Besides, a magnetic sensitivity of 0.87 ± 0.09 dB beyond the 
+SQL is achieved by two-spin interference for detecting a real magnetic 
+field. Particularly, the deterministic and joint initialization of NV 
+negative state, NV electron spin, and two nuclear spins is realized at 
+room temperature. The techniques used here are of fundamental importance
+ for quantum sensing and computing, and naturally applicable to other 
+solid-state spin systems.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2021-08-06</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/sciadv.abg9204">10.1126/sciadv.abg9204</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/sciadv.abg9204">https://www.science.org/doi/10.1126/sciadv.abg9204</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:39:34</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>12.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 12.5
+5年影响因子: 14.1
+EI: 是
+南农高质量: A
+titleTranslation: 在具有固态自旋的环境条件下打破标准量子极限。
+TLDR: A sub-SQL interferometer at ambient conditions by using a 
+multispin system, namely, the nitrogen-vacancy (NV) defect in diamond, 
+and the deterministic and joint initialization of NV negative state, NV 
+electron spin, and two nuclear spins is realized at room temperature.
+Citations: 50 (Crossref) [2026-02-21]
+Citations: 61 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>7</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>eabg9204</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science Advances</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2375-2548</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>32</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Sci. Adv.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:39:34</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:43:33</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_8FUCG3I2">Xie 等 - 2021 - Beating the standard quantum limit under ambient c.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_MK22FYYB" class="item journalArticle">
+			<h2>Coherent dynamics of a single spin interacting with an adjustable spin bath</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. Hanson</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>V. V. Dobrovitski</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. E. Feiguin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>O. Gywat</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>D. D. Awschalom</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Phase coherence is a fundamental concept in quantum mechanics.
+ Understanding the loss of coherence is paramount for future quantum 
+information processing. We studied the coherent dynamics of a single 
+central spin (a nitrogen-vacancy center) coupled to a bath of spins 
+(nitrogen impurities) in diamond. Our experiments show that both the 
+internal interactions of the bath and the coupling between the central 
+spin and the bath can be tuned in situ, allowing access to regimes with 
+surprisingly different behavior. The observed dynamics are well 
+explained by analytics and numerical simulations, leading to valuable 
+insight into the loss of coherence in spin systems. These measurements 
+demonstrate that spins in diamond provide an excellent test bed for 
+models and protocols in quantum information.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2008-04-18</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.1155400">10.1126/science.1155400</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.1155400">https://www.science.org/doi/10.1126/science.1155400</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/28 16:31:52</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 394 (Crossref) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>320</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>352-355</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>5874</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/28 16:31:52</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:27:42</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_PJ9KJJI9">PDF					</li>
+					<li id="item_NZB3VX7M">PDF					</li>
+					<li id="item_BH45JG77">PDF					</li>
+					<li id="item_GM6X86T4">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_5PH4XWKY" class="item journalArticle">
+			<h2>Coherent feedback control of a single qubit in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Masashi Hirose</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Paola Cappellaro</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>4/2016</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/nature17404">10.1038/nature17404</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/nature17404">https://www.nature.com/articles/nature17404</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:38:48</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>48.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>83 citations (Semantic Scholar/DOI) [2023-08-05]
+TLDR: A feedback-control algorithm is implemented using a solid-state 
+spin qubit system associated with the nitrogen vacancy centre in 
+diamond, using coherent feedback to overcome the limitations of 
+measurement-based feedback, and it is shown that it can protect the 
+qubit against intrinsic dephasing noise for milliseconds.
+JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 48.5
+5年影响因子: 55.0
+南农高质量: A
+titleTranslation: 金刚石中单个量子比特的相干反馈控制。</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>532</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>77-80</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0028-0836, 1476-4687</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>7597</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:38:48</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:33:50</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_MXCZJ3IB">Hirose 和 Cappellaro - 2016 - Coherent feedback control of a single qubit in dia.pdf					</li>
+					<li id="item_CDZ2FNHZ">Hirose_Cappellaro_2016_Coherent feedback control of a single qubit in diamond.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_VY49RBC3" class="item journalArticle">
+			<h2>Detection of molecular transitions with nitrogen-vacancy centers and electron-spin labels</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>C. Munuera-Javaloy</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. Puebla</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>B. D’Anjou</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>M. B. Plenio</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. Casanova</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Abstract
+            We present a protocol that detects molecular conformational 
+changes with two nitroxide electron-spin labels and a nitrogen-vacancy 
+(NV) center in diamond. More specifically, we demonstrate that the NV 
+can detect energy shifts induced by the coupling between electron-spin 
+labels. The protocol relies on the judicious application of microwave 
+and radiofrequency pulses in a range of parameters that ensures stable 
+nitroxide resonances. Furthermore, we demonstrate that our scheme is 
+optimized by using nitroxides with distinct nitrogen isotopes. We 
+develop a simple theoretical model that we combine with Bayesian 
+inference techniques to demonstrate that our method enables the 
+detection of conformational changes in ambient conditions including 
+strong NV dephasing rates as a consequence of the diamond surface 
+proximity and nitroxide thermalization mechanisms. Finally, we 
+counter-intuitively show that with our method the small residual effect 
+of random molecular tumbling becomes a resource that can be exploited to
+ extract inter-label distances.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2022-11-30</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s41534-022-00653-w">10.1038/s41534-022-00653-w</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s41534-022-00653-w">https://www.nature.com/articles/s41534-022-00653-w</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/29 00:15:47</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>8.3</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 8 (Crossref) [2026-02-21]
+Citations: 9 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>140</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>npj Quantum Information</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2056-6387</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>npj Quantum Inf</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/29 00:15:49</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:44:38</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_DVQUDFSX">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_H4K8PS4K" class="item journalArticle">
+			<h2>Diamond dynamics under control</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Lilian Childress</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10/g6kdch">10/g6kdch</a></td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>2 citations (Crossref) [2024-10-02]</td>
+					</tr>
+					<tr>
+					<th>系列标题</th>
+						<td>无</td>
+					</tr>
+					<tr>
+					<th>系列描述</th>
+						<td>无</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2024/10/2 05:40:09</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2024/10/2 05:42:26</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_VSKI3T4Q">Childress - Diamond dynamics under control.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_3KT58U3U" class="item journalArticle">
+			<h2>Dopant-assisted stabilization of negatively charged single 
+nitrogen-vacancy centers in phosphorus-doped diamond at low temperatures</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Charge state instabilities have been a bottleneck for the 
+implementation of solid-state spin systems and pose a major challenge to
+ the development of spin-based quantum technologies. Here we investigate
+ the stabilization of negatively charged nitrogen-vacancy (NV 
+− 
+) centers in phosphorus-doped diamond at liquid helium temperatures. 
+Photoionization of phosphorous donors in conjunction with charge 
+diffusion at the nanoscale enhances NV 
+0 
+ to NV 
+− 
+ conversion and stabilizes the NV 
+− 
+ charge state without the need for an additional repump laser. The 
+phosphorus-assisted stabilization is explored and confirmed both with 
+experiments and our theoretical model. Stable 
+photoluminescence-excitation spectra are obtained for NV 
+− 
+ centers created during the growth. The fluorescence is continuously 
+recorded under resonant excitation to real-time monitor the charge state
+ and the ionization and recombination rates are extracted from time 
+traces. We find a linear laser power dependence of the recombination 
+rate as opposed to the conventional quadratic dependence, which is 
+attributed to the photo-ionization of phosphorus atoms.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-10-27</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s41534-023-00777-7">10.1038/s41534-023-00777-7</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s41534-023-00777-7?utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound">https://
+www.nature.com/articles/s41534-023-00777-7?
+utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/12/24 17:41:24</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>8.3</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 14 (Crossref) [2026-02-21]
+Citations: 14 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>9</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>110</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>npj Quantum Information</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2056-6387</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>npj Quantum Inf</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/10/27 19:08:06</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:26:40</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV色心</li>
+					<li>重要</li>
+					<li>Researcher App</li>
+					<li>材料制备</li>
+					<li>磷参杂</li>
+					<li>电荷态稳定</li>
+					<li>#nosource</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_VDF4L6KH">
+<div><div data-schema-version="8"><p><strong><span style="color: rgb(166, 6, 6)">研究了液氦温度下掺磷金刚石中带负电的氮空位（NV−）中心的稳定性</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">磷供体的光电离与纳米级的电荷扩散相结合，增强了 NV0 到 NV− 的转换，并稳定了 NV− 电荷状态，而无需额外的再泵浦激光器</span></strong></p>
+</div></div>
+					</li>
+					<li id="item_SDAMW5QH">
+<div><div data-schema-version="8"><p>研究结果</p>
+<p><strong>1 实验结果</strong></p>
+<ul>
+<li>
+<strong>PLE光谱</strong>：在液氦温度下，无需再泵浦激光即可获得稳定的PLE光谱，光谱线宽约为1GHz，显著宽于本征金刚石中NV中心的线宽。
+</li>
+<li>
+<strong>电荷动力学参数</strong>：提取到NV中心的电离率（k_ion）约为0.5(1) s⁻¹，复合率（k_rec）约为11(3) s⁻¹，导致NV^-态的占据概率为96(2)%。
+</li>
+</ul>
+<p><strong>2 激发功率依赖关系</strong></p>
+<ul>
+<li>
+<strong>电离率</strong>：电离率与激发功率的平方成正比，符合两光子过程的预期。
+</li>
+<li>
+<strong>复合率</strong>：复合率与激发功率呈线性关系，与传统依赖再泵浦激光的情况不同，归因于磷杂质光电离产生的额外电子。
+</li>
+</ul>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_E9FW9SR3">Geng 等 - 2023 - Dopant-assisted stabilization of negatively charge.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_3ZQGNQDW" class="item journalArticle">
+			<h2>Dynamically encircling an exceptional point in a real quantum system</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Wenquan Liu</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Yang Wu</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Chang-Kui Duan</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Xing Rong</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jiangfeng Du</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2021-4-30</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.126.170506">10.1103/PhysRevLett.126.170506</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevLett.126.170506">https://link.aps.org/doi/10.1103/PhysRevLett.126.170506</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:38:15</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 9.0
+5年影响因子: 9.1
+EI: 是
+南农高质量: A
+titleTranslation: 动态地包围真实量子系统中的一个例外点。
+Citations: 119 (Crossref) [2026-02-21]
+Citations: 86 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>126</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>170506</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>17</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:38:15</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 20:45:14</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_DNAK4MZZ">Liu 等 - 2021 - Dynamically Encircling an Exceptional Point in a R.pdf					</li>
+					<li id="item_NIC7XHBY">Liu et al_2021_Dynamically Encircling an Exceptional Point in a Real Quantum System.pdf					</li>
+					<li id="item_BZ7F8M8X">Liu et al_2021_Dynamically Encircling an Exceptional Point in a Real Quantum System.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_T8LD7PRP" class="item journalArticle">
+			<h2>Extreme diamond-based quantum sensors</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>James J. Hamlin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Brian B. Zhou</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Nitrogen vacancies make for superlative sensors of material 
+properties at high pressures
+          , 
+            
+              We spend our entire lives at pressures near 1 atm. But 
+most of the matter in our planet exists at far higher pressures. 
+Experiments conducted under applied pressure are crucial to 
+understanding condensed matter. High-pressure experiments have provided 
+data on the matter in planetary interiors that have improved our 
+understanding of seismic events. Most notably, applied high pressures 
+permit the synthesis and study of new materials with extraordinary 
+properties, such as extreme hardness. Recent experiments on hydride 
+materials compressed to greater than 1 million atm have revealed 
+near-room-temperature superconductivity (
+              1
+              –
+              3
+              ), finally pushing past record critical temperatures that 
+had stagnated since the 1990s. On pp. 1349, 1359, and 1355 of this 
+issue, Hsieh
+              et al.
+              (
+              4
+              ), Lesik
+              et al.
+              (
+              5
+              ), and Yip
+              et al.
+              (
+              6
+              ), respectively, report on a comprehensive set of 
+experiments that demonstrate that quantum sensors based on so-called 
+nitrogen vacancy (NV) centers offer powerful new tools for probing 
+matter at extreme pressures.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2019-12-13</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.aaz4982">10.1126/science.aaz4982</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.aaz4982">https://www.science.org/doi/10.1126/science.aaz4982</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2024/10/2 05:41:11</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>http://www.sciencemag.org/about/science-licenses-journal-article-reuse</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 30 (Crossref) [2026-02-21]
+Citations: 31 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>366</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>1312-1313</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6471</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2024/10/2 05:41:11</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 23:13:25</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_Z5SQJGD9">Hamlin 和 Zhou - 2019 - Extreme diamond-based quantum sensors.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_XND2U2MF" class="item journalArticle">
+			<h2>Heterodyne sensing of microwaves with a quantum sensor</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jonas Meinel</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Vadim Vorobyov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Boris Yavkin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Durga Dasari</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Hitoshi Sumiya</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Shinobu Onoda</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Junichi Isoya</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jörg Wrachtrup</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Abstract
+            Diamond quantum sensors are sensitive to weak microwave 
+magnetic fields resonant to the spin transitions. However, the spectral 
+resolution in such protocols is&nbsp;ultimately limited by the sensor 
+lifetime. Here, we demonstrate a heterodyne detection method for 
+microwaves (MW) leading to a lifetime independent spectral resolution in
+ the GHz range. We reference the MW&nbsp;signal to a local oscillator by
+ generating the initial superposition state from a coherent source. 
+Experimentally, we achieve a spectral resolution below 1 Hz for a 4 GHz 
+signal far below the sensor lifetime limit of kilohertz. Furthermore, we
+ show control over the interaction of the MW-field with the two-level 
+system by applying dressing fields, pulsed Mollow absorption and Floquet
+ dynamics under strong longitudinal radio frequency drive. While pulsed 
+Mollow absorption leads to improved sensitivity, the Floquet dynamics 
+allow robust control, independent from the system’s resonance frequency.
+ Our work is important for future studies in sensing weak microwave 
+signals in a wide frequency range with high spectral resolution.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2021-05-12</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s41467-021-22714-y">10.1038/s41467-021-22714-y</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s41467-021-22714-y">https://www.nature.com/articles/s41467-021-22714-y</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/8/8 10:26:13</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>15.7</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 68 (Crossref) [2026-02-21]
+Citations: 71 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>12</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>2737</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature Communications</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2041-1723</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nat Commun</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/8/8 10:26:13</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:44:35</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_UM8AJFV3">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_UE4VIUKD" class="item journalArticle">
+			<h2>High-resolution nanoscale NMR for arbitrary magnetic fields</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Nitrogen vacancy (NV) centers are a major platform for the 
+detection of nuclear magnetic resonance (NMR) signals at the nanoscale. 
+To overcome the intrinsic electron spin lifetime limit in spectral 
+resolution, a heterodyne detection approach is widely used. However, 
+application of this technique at high magnetic fields is yet an unsolved
+ problem. Here, we introduce a heterodyne detection method utilizing a 
+series of phase coherent electron nuclear double resonance sensing 
+blocks, thus eliminating the numerous Rabi microwave pulses required in 
+the detection. Our detection protocol can be extended to high magnetic 
+fields, allowing chemical shift resolution in NMR experiments. We 
+demonstrate this principle on a weakly coupled  
+13 
+C nuclear spin in the bath surrounding single NV centers, and compare 
+the results to existing heterodyne protocols. Additionally, we identify 
+the combination of NV-spin-initialization infidelity and strong 
+sensor-target-coupling as linewidth-limiting decoherence source, paving 
+the way towards high-field heterodyne NMR protocols with chemical 
+resolution.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-10-17</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s42005-023-01419-2">10.1038/s42005-023-01419-2</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s42005-023-01419-2?utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound">https://
+www.nature.com/articles/s42005-023-01419-2?
+utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/12/10 11:38:37</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>5.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 14 (Crossref) [2026-02-21]
+Citations: 16 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>6</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>302</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Communications Physics</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2399-3650</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Commun Phys</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/10/29 22:18:11</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:26:14</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV色心</li>
+					<li>重要</li>
+					<li>磁力仪</li>
+					<li>Researcher App</li>
+					<li>高磁场</li>
+					<li>异核双共振</li>
+					<li>#nosource</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_DGU3V6E5">
+<div><div data-schema-version="8"><p><strong><span style="color: rgb(166, 6, 6)">引入了一种利用一系列相位相干电子核双共振传感块的外差检测方法，从而消除了检测中所需的大量拉比微波脉冲</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">我们的检测方案可以扩展到高磁场，从而在 NMR 实验中实现化学位移分辨率</span></strong></p>
+</div></div>
+					</li>
+					<li id="item_YV4FBHBX">
+<div><div data-schema-version="8"><p>研究结果</p>
+<p><strong>1 谱分辨率</strong></p>
+<p>在0.25特斯拉的磁场下，对单个13C核自旋进行了探测，获得了分辨率为2.336±0.018kHz的NMR谱，信号衰减率为Γ=0.6±0.1kHz。</p>
+<p><strong>2 与传统方法的比较</strong></p>
+<p>与传统异核检测技术相比，本文提出的方案在谱分辨率上表现出优越性。特别是对于耦合强度较小的核自旋（Azz≤0.07kHz），传统方法的衰减率为27±9Hz，而本文方法的衰减率保持在约1kHz左右。</p>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_GM4UTTMY">Meinel 等 - 2023 - High-resolution nanoscale NMR for arbitrary magnet.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_KCCSUEIM" class="item journalArticle">
+			<h2>Identity test of single NV − centers in diamond at hz-precision level</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Tianyu Xie</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhiyuan Zhao</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Maosen Guo</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Mengqi Wang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fazhan Shi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jiangfeng Du</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2021-7-28</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.127.053601">10.1103/PhysRevLett.127.053601</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevLett.127.053601">https://link.aps.org/doi/10.1103/PhysRevLett.127.053601</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:38:19</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>4 citations (Semantic Scholar/DOI) [2023-08-05]
+JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 9.0
+5年影响因子: 9.1
+EI: 是
+南农高质量: A
+titleTranslation: 在Hz精度水平上对金刚石中单个NV -心进行了恒等性检验。</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>127</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>053601</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:38:19</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 15:25:28</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV量子传感/器件</li>
+					<li>NV时钟/固态频标</li>
+					<li>#broken</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_DQRKXVXR">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_2P62E4IP">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_TX2TD2M2">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_T4QVJPJX">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_AD4FMHFT">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_656GHK3V">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_PUURTPNJ">已提交版本					</li>
+					<li id="item_LDN9R96A">已提交版本					</li>
+					<li id="item_R5S24H9L">PDF					</li>
+					<li id="item_N2TUK4IW">Xie 等 - 2021 - Identity Test of Single NV − Centers in Diamond at Hz-Precision Level.pdf					</li>
+					<li id="item_HBZ7A94Y">Xie 等 - 2021 - Identity Test of Single NV − Centers in Diamond at.pdf					</li>
+					<li id="item_9ZFIIPMG">Xie 等 - 2021 - Identity Test of Single NV − Centers in Diamond at.pdf					</li>
+					<li id="item_F3I8TKKP">Xie 等 - 2021 - Identity Test of Single NV − Centers in Diamond at.pdf					</li>
+					<li id="item_CATVUTNC">Xie et al_2021_Identity Test of Single NV − Centers in Diamond at Hz-Precision Level.pdf					</li>
+					<li id="item_3US3I4U2">Xie et al_2021_Identity Test of Single NV − Centers in Diamond at Hz-Precision Level.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_X5SSMBWT" class="item journalArticle">
+			<h2>In situ electron paramagnetic resonance spectroscopy using single nanodiamond sensors</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhuoyang Qin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhecheng Wang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fei Kong</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jia Su</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhehua Huang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Pengju Zhao</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Sanyou Chen</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Qi Zhang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fazhan Shi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jiangfeng Du</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Abstract
+            An ultimate goal of electron paramagnetic resonance (EPR) 
+spectroscopy is to analyze molecular dynamics in place where it occurs, 
+such as in a living cell. The nanodiamond (ND) hosting nitrogen-vacancy 
+(NV) centers will be a promising EPR sensor to achieve this goal. 
+However, ND-based EPR spectroscopy remains elusive, due to the challenge
+ of controlling NV centers without well-defined orientations inside a 
+flexible ND. Here, we show a generalized zero-field EPR technique with 
+spectra robust to the sensor’s orientation. The key is applying an 
+amplitude modulation on the control field, which generates a series of 
+equidistant Floquet states with energy splitting being the 
+orientation-independent modulation frequency. We acquire the zero-field 
+EPR spectrum of vanadyl ions in aqueous glycerol solution with embedded 
+single NDs, paving the way towards in vivo EPR.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-10-07</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s41467-023-41903-5">10.1038/s41467-023-41903-5</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s41467-023-41903-5">https://www.nature.com/articles/s41467-023-41903-5</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/12/10 11:38:57</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>15.7</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>titleTranslation: 使用单个纳米金刚石传感器的原位电子顺磁共振波谱
+JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 15.7
+5年影响因子: 17.2
+南农高质量: A</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>14</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>6278</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature Communications</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2041-1723</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nat Commun</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/12/10 11:38:57</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:57:13</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>创新</li>
+					<li>方向无关</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_A7T4MJZ2">
+<div><div data-schema-version="8"><p><strong><span style="color: rgb(166, 6, 6)">在柔性 ND 内控制没有明确方向的 NV 中心是一项挑战</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">我们展示了一种通用的零场 EPR 技术，其光谱对传感器的方向具有鲁棒性</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">其关键在于对控制场进行振幅调制，从而产生一系列等距的 Floquet 状态，能量分化与调制频率的取向无关</span></strong></p>
+</div></div>
+					</li>
+					<li id="item_DEI3Q5KJ">
+<div><div data-schema-version="8"><p>研究结果</p>
+<ul>
+<li>
+<strong>EPR光谱特征</strong>：在固定和翻滚纳米金刚石上均检测到了清晰的EPR光谱信号，特征峰位置与理论预测一致。
+</li>
+<li>
+<strong>超精细耦合常数</strong>：通过拟合EPR光谱，得到了钒酰离子的超精细耦合常数A⊥=195±2 MHz和A∥=579±8 MHz，与文献报道值相近。
+</li>
+<li>
+<strong>信号强度</strong>：翻滚纳米金刚石上的EPR信号强度依赖于NV中心的深度，浅层的NV中心对信号贡献更大。
+</li>
+</ul>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_6583VLN3">Qin 等 - 2023 - In situ electron paramagnetic resonance spectrosco.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_EU3HVCDT" class="item journalArticle">
+			<h2>Magnetic measurements on micrometer-sized samples under high pressure using designed NV centers</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Margarita Lesik</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Thomas Plisson</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Loïc Toraille</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Justine Renaud</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Florent Occelli</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Martin Schmidt</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Olivier Salord</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Anne Delobbe</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Thierry Debuisschert</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Loïc Rondin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Paul Loubeyre</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jean-François Roch</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Diamond-based sensors
+            
+              Material properties can change dramatically under 
+pressure. Typically, to achieve high-pressure conditions, researchers 
+place their samples in diamond anvil cells (DACs). However, monitoring 
+the properties of the sample inside a DAC is tricky (see the Perspective
+ by Hamlin and Zhou). Hsieh
+              et al.
+              , Lesik
+              et al.
+              , and Yip
+              et al.
+              developed monitoring techniques based on nitrogen-vacancy 
+(NV) centers in diamond. The NV centers can act as sensors because their
+ energy levels and the associated spectra are sensitive to strain and 
+magnetic fields. This enabled optical readout of a spatially resolved 
+signal.
+            
+            
+              Science
+              , this issue p.
+              1349
+              , p.
+              1359
+              , p.
+              1355
+              ; see also p.
+              1312
+            
+          , 
+            Nitrogen-vacancy centers are used as sensors inside a 
+high-pressure diamond anvil cell.
+          , 
+            Pressure can be used to tune the interplay among structural,
+ electronic, and magnetic interactions in materials. High pressures are 
+usually applied in the diamond anvil cell, making it difficult to study 
+the magnetic properties of a micrometer-sized sample. We report a method
+ for spatially resolved optical magnetometry based on imaging a layer of
+ nitrogen-vacancy (NV) centers created at the surface of a diamond 
+anvil. We illustrate the method using two sets of measurements realized 
+at room temperature and low temperature, respectively: the pressure 
+evolution of the magnetization of an iron bead up to 30 gigapascals 
+showing the iron ferromagnetic collapse and the detection of the 
+superconducting transition of magnesium dibromide at 7 gigapascals.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2019-12-13</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.aaw4329">10.1126/science.aaw4329</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.aaw4329">https://www.science.org/doi/10.1126/science.aaw4329</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2024/10/2 05:41:07</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 153 (Crossref) [2026-02-21]
+Citations: 156 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>366</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>1359-1362</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6471</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2024/10/2 05:41:07</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 23:13:37</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_M392II2M">Lesik 等 - 2019 - Magnetic measurements on micrometer-sized samples .pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_LR5PPR7L" class="item journalArticle">
+			<h2>Magnetic pseudo-fields in a rotating electron–nuclear spin system</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A.&nbsp;A. Wood</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>E. Lilette</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Y. Y. Fein</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>V. S. Perunicic</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>L.&nbsp;C.&nbsp;L. Hollenberg</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. E. Scholten</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. M. Martin</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>11/2017</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/nphys4221">10.1038/nphys4221</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/nphys4221">https://www.nature.com/articles/nphys4221</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:38:55</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>18.4</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 18.4
+5年影响因子: 21.2
+EI: 是
+南农高质量: A
+titleTranslation: 旋转电子-核自旋系统中的磁赝场。
+Citations: 31 (Crossref) [2026-02-21]
+Citations: 36 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>13</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>1070-1073</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature Physics</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1745-2473, 1745-2481</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>11</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nature Phys</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:38:55</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 15:25:31</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_PJT3JH6M">已提交版本					</li>
+					<li id="item_FYB65GE8">Wood 等 - 2017 - Magnetic pseudo-fields in a rotating electron–nucl.pdf					</li>
+					<li id="item_8WU2YEHQ">Wood et al_2017_Magnetic pseudo-fields in a rotating electron–nuclear spin system.pdf						<div class="note"><div><p xmlns="http://www.w3.org/1999/xhtml" id="title"><strong>Contents</strong></p><ul xmlns="http://www.w3.org/1999/xhtml" style="list-style-type: none; padding-left:0px" id="toc"><li><a href="zotero://open-pdf/0_8WU2YEHQ/1">Magnetic pseudo-fields in a rotating electron–nuclear spin system</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/4">Methods</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/2">Figure 1 Experimental set-up and measurement scheme.</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/3">Figure 2 Measurement of rotationally induced magnetic pseudo-fields.</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/3">Figure 3 Quantum control of nuclear spins with rotational pseudo-fields.</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/4">References</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/4">Acknowledgements</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/4">Author contributions</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/4">Additional information</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/4">Competing financial interests</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_8WU2YEHQ/5">Methods</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/5">State preparation and readout.</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/5">Magnetic field alignment.</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_8WU2YEHQ/5">Data availability.</a></li></ul></li></ul></div>
+					</div>					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_ITQZ2E28" class="item journalArticle">
+			<h2>Magnetic resonance spectroscopy of an atomically thin material using a single-spin qubit</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>I. Lovchinsky</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. D. Sanchez-Yamagishi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>E. K. Urbach</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>S. Choi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>S. Fang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>T. I. Andersen</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>K. Watanabe</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>T. Taniguchi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. Bylinskii</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>E. Kaxiras</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>P. Kim</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>H. Park</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>M. D. Lukin</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Getting a sense of atomically thin materials
+            
+              Two-dimensional materials such as graphene and transition 
+metal dichalcogenides provide a powerful platform for optoelectronic 
+applications. As the materials get thinner, however, characterizing the 
+electronic properties can present an experimental challenge. Lovchinsky
+              et al.
+              demonstrate that atomic-like impurities in diamond can be 
+used to probe the properties of 2D materials by nanometer-scale nuclear 
+quadrupole resonance spectroscopy. Coherent manipulation of shallow 
+nitrogen-vacancy color centers enabled probing of nanoscale ensembles 
+down to several tens of nuclear spins in atomically thin hexagonal boron
+ nitride.
+            
+            
+              Science
+              , this issue p.
+              503
+            
+          , 
+            A nitrogen-vacancy center in diamond is used to probe the 
+electronic properties of atomically thin materials.
+          , 
+            Two-dimensional (2D) materials offer a promising platform 
+for exploring condensed matter phenomena and developing technological 
+applications. However, the reduction of material dimensions to the 
+atomic scale poses a challenge for traditional measurement and 
+interfacing techniques that typically couple to macroscopic observables.
+ We demonstrate a method for probing the properties of 2D materials via 
+nanometer-scale nuclear quadrupole resonance (NQR) spectroscopy using 
+individual atomlike impurities in diamond. Coherent manipulation of 
+shallow nitrogen-vacancy (NV) color centers enables the probing of 
+nanoscale ensembles down to approximately 30 nuclear spins in atomically
+ thin hexagonal boron nitride (h-BN). The characterization of 
+low-dimensional nanoscale materials could enable the development of new 
+quantum hybrid systems, combining atomlike systems coherently coupled 
+with individual atoms in 2D materials.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2017-02-03</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.aal2538">10.1126/science.aal2538</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.aal2538">https://www.science.org/doi/10.1126/science.aal2538</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/28 15:55:29</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>http://www.sciencemag.org/about/science-licenses-journal-article-reuse</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 131 (Crossref) [2026-02-21]
+Citations: 138 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>355</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>503-507</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6324</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/28 15:55:29</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:44:31</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_EX5GA9DU">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_NGH6H7WV" class="item journalArticle">
+			<h2>Nanoscale covariance magnetometry with diamond quantum sensors</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jared Rovny</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhiyang Yuan</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Mattias Fitzpatrick</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Ahmed I. Abdalla</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Laura Futamura</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Carter Fox</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Matthew Carl Cambria</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Shimon Kolkowitz</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Nathalie P. De Leon</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Nitrogen vacancy (NV) centers in diamond are atom-scale 
+defects that can be used to sense magnetic fields with high sensitivity 
+and spatial resolution. Typically, the magnetic field is measured by 
+averaging sequential measurements of single NV centers, or by spatial 
+averaging over ensembles of many NV centers, which provides mean values 
+that contain no nonlocal information about the relationship between two 
+points separated in space or time. Here, we propose and implement a 
+sensing modality whereby two or more NV centers are measured 
+simultaneously, and we extract temporal and spatial correlations in 
+their signals that would otherwise be inaccessible. We demonstrate 
+measurements of correlated applied noise using spin-to-charge readout of
+ two NV centers and implement a spectral reconstruction protocol for 
+disentangling local and nonlocal noise sources.
+          , 
+            Covariance magnetometry
+            
+              Color defect centers in diamond, such as the nitrogen 
+vacancy center effect, behave as miniature compass needles. Their 
+optical signature is sensitive to local magnetic fields with nanoscale 
+resolution. To date, these sensing modalities have been largely limited 
+to detecting static magnetic fields or sensing an ensemble average, 
+providing access to dynamical behavior only indirectly. Rovny
+              et al
+              . developed a theoretical framework and demonstrate a new 
+sensing modality for detecting spatiotemporal correlations from 
+simultaneous measurements of two nitrogen vacancy defect centers in 
+diamond. Covariance measurements open a window for sensing 
+spatiotemporal dynamics through nanoscale magnetometry. —ISO
+            
+          , 
+            Simultaneous measurements of two nitrogen vacancy centers in
+ diamond enables spatiotemporal magnetometry.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2022-12-23</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.ade9858">10.1126/science.ade9858</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.ade9858">https://www.science.org/doi/10.1126/science.ade9858</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:38:02</td>
+					</tr>
+					<tr>
+					<th>档案</th>
+						<td>Q1</td>
+					</tr>
+					<tr>
+					<th>档案编号</th>
+						<td>综合性期刊1区 Top</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>54.500</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>5 citations (Semantic Scholar/DOI) [2023-08-05]
+JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 45.8
+5年影响因子: 49.7
+南农高质量: A
+titleTranslation: 金刚石量子传感器的纳米级协方差磁力仪。</td>
+					</tr>
+					<tr>
+					<th>系列标题</th>
+						<td>无</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>378</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>1301-1305</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6626</td>
+					</tr>
+					<tr>
+					<th>系列描述</th>
+						<td>无</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:38:02</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:23:29</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>NV量子传感/器件</li>
+					<li>#broken</li>
+					<li>创新</li>
+					<li>相干测量</li>
+					<li>相关性</li>
+					<li>协方差测量</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_BVSZE6ZM">
+<div><div data-schema-version="8"><p><strong>创新点</strong></p>
+<ul>
+<li>
+<strong>新的测量模式</strong>：提出了协方差磁力测定这一新的测量模式，通过同时测量两个NV中心的信号并提取其相关性，获得了关于磁场时空结构的新信息。
+</li>
+<li>
+<strong>高灵敏度读取</strong>：使用自旋到电荷转换协议显著提高了NV中心信号的读取灵敏度，使得协方差磁力测定成为可能。
+</li>
+</ul>
+<p><strong>噪声源分解</strong>：实施了一种光谱重建协议，能够区分局部和非局部噪声源，为磁场测量提供了更丰富的信息。</p>
+</div></div>
+					</li>
+					<li id="item_42TGQ7UW">
+<div><div data-schema-version="8"><p><strong>研究结果</strong></p>
+<ul>
+<li>
+<strong>相关性测量</strong>：通过施加2MHz的交流信号并测量两个NV中心的相关性，观察到了当NV中心初始化方向相同时的正相关，以及初始化方向相反时的负相关。
+</li>
+<li>
+<strong>灵敏度分析</strong>：计算了协方差磁力测定的灵敏度，发现其与传统磁力测定方法相比，在检测相关性方面具有更高的灵敏度。
+</li>
+</ul>
+<p><strong>噪声源分解</strong>：通过光谱重建协议成功区分了局部和非局部噪声源，展示了协方差磁力测定在复杂磁场环境中的应用潜力。</p>
+</div></div>
+					</li>
+					<li id="item_MZJG43AL">
+<div><p>VerificationStatus: web_verified_this_pass</p></div>
+					</li>
+					<li id="item_6YR8PTJZ">
+<div><p>VerificationStatus: web_verified_this_pass</p></div>
+					</li>
+					<li id="item_HEJJERMR">
+<div><p>VerificationStatus: web_verified_this_pass</p></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_38CLW47M">Rovny 等 - 2022 - Nanoscale covariance magnetometry with diamond qua.pdf					</li>
+					<li id="item_WSR6YWBS">Rovny 等 - 2022 - Nanoscale covariance magnetometry with diamond qua.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_IJFQNU88" class="item journalArticle">
+			<h2>Nanoscale imaging magnetometry with diamond spins under ambient conditions</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Gopalakrishnan Balasubramanian</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>I. Y. Chan</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Roman Kolesov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Mohannad Al-Hmoud</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Julia Tisler</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Chang Shin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Changdong Kim</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Aleksander Wojcik</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Philip R. Hemmer</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Anke Krueger</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Tobias Hanke</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Alfred Leitenstorfer</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Rudolf Bratschitsch</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fedor Jelezko</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jörg Wrachtrup</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>10/2008</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/nature07278">10.1038/nature07278</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/nature07278">https://www.nature.com/articles/nature07278</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/11/12 12:14:52</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>48.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>http://www.springer.com/tdm</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 48.5
+5年影响因子: 55.0
+南农高质量: A
+titleTranslation: 环境条件下金刚石自旋的纳米尺度成像磁测量。
+TLDR: This work shows how magneto-optical spin detection can be used to 
+determine the location of a spin associated with a single 
+nitrogen-vacancy centre in diamond with nanometre resolution under 
+ambient conditions, and demonstrates the use of a single diamond spin as
+ a scanning probe magnetometer to map nanoscale magnetic field 
+variations.</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>455</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>648-651</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0028-0836, 1476-4687</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>7213</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/11/12 12:14:52</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 05:00:57</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV色心基础/综述</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_XQB2S7TG">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_U9DGS38U">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_9DNGE6Y4">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_Q3N4377H">Balasubramanian 等 - 2008 - Nanoscale imaging magnetometry with diamond spins .pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_NYZEPJGU" class="item journalArticle">
+			<h2>Nanoscale magnetic sensing with an individual electronic spin in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. R. Maze</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>P. L. Stanwix</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. S. Hodges</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>S. Hong</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. M. Taylor</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>P. Cappellaro</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>L. Jiang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>M. V. Gurudev Dutt</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>E. Togan</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. S. Zibrov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. Yacoby</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. L. Walsworth</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>M. D. Lukin</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>10/2008</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/nature07279">10.1038/nature07279</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/nature07279">https://www.nature.com/articles/nature07279</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/11/12 12:15:04</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>48.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>http://www.springer.com/tdm</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 48.5
+5年影响因子: 55.0
+南农高质量: A
+titleTranslation: 金刚石中单个电子自旋的纳米尺度磁传感。</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>455</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>644-647</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0028-0836, 1476-4687</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>7213</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/11/12 12:15:04</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 05:00:47</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV色心基础/综述</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_FCTVL2PX">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_WUTS5ABG">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_L4E4TRFC">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_5KRGRYTI">Maze 等 - 2008 - Nanoscale magnetic sensing with an individual elec.pdf					</li>
+					<li id="item_WYWWX6H8">Maze 等 - 2008 - Nanoscale magnetic sensing with an individual electronic spin in diamond.pdf					</li>
+					<li id="item_VGC5NI8U">Maze 等 - 2008 - Nanoscale magnetic sensing with an individual electronic spin in diamond.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_MNRKWXVY" class="item journalArticle">
+			<h2>Nonadiabatic dynamics and geometric phase of an ultrafast rotating electron spin</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Xing-Yan Chen</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Tongcang Li</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Zhang-qi Yin</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>The spin in a rotating frame has attracted a lot of attentions
+ recently, as it deeply relates to both fundamental physics such as 
+pseudo-magnetic field and geometric phase, and applications such as 
+gyroscopic sensors. However, previous studies only focused on adiabatic 
+limit, where the rotating frequency is much smaller than the spin 
+frequency. Here we propose to use a levitated nano-diamond with a 
+built-in nitrogen-vacancy (NV) center to study the dynamics and the 
+geometric phase of a rotating electron spin without adiabatic 
+approximation. We find that the transition between the spin levels 
+appears when the rotating frequency is comparable to the spin frequency 
+at zero magnetic field. Then we use Floquet theory to numerically solve 
+the spin energy spectrum, study the spin dynamics and calculate the 
+geometric phase under a finite magnetic field, where the rotating 
+frequency to fulfill the resonant transition condition could be greatly 
+reduced.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>03/2019</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.scib.2019.02.018">10.1016/j.scib.2019.02.018</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="http://arxiv.org/abs/1811.01641">http://arxiv.org/abs/1811.01641</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2020/11/3 07:15:03</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>21.1</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Number: 6
+arXiv: 1811.01641</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>64</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>380-384</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science Bulletin</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>20959273</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science Bulletin</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2021/6/9 20:50:46</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:34:50</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#broken</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_GPUV2CKP">
+<p class="plaintext">Comment: 6+2 pages, 3+1 figures</p>
+					</li>
+					<li id="item_K38Y3N9K">
+<p class="plaintext">Comment: 6+2 pages, 3+1 figures</p>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_KA38NQZN">Chen 等 - 2019 - Nonadiabatic dynamics and geometric phase of an ul.pdf					</li>
+					<li id="item_IKVUHEAJ">Chen 等。 - 2019 - Nonadiabatic dynamics and geometric phase of an ul.pdf					</li>
+					<li id="item_EICKNM65">Chen 等。 - 2019 - Nonadiabatic dynamics and geometric phase of an ul.pdf					</li>
+					<li id="item_K53H2CKV">Chen 等。 - 2019 - Nonadiabatic dynamics and geometric phase of an ul.pdf					</li>
+					<li id="item_DHAYHXFX">Chen et al_2019_Nonadiabatic dynamics and geometric phase of an ultrafast rotating electron spin.pdf						<div class="note"><div><p xmlns="http://www.w3.org/1999/xhtml" id="title"><strong>Contents</strong></p><ul xmlns="http://www.w3.org/1999/xhtml" style="list-style-type: none; padding-left:0px" id="toc"><li><a href="zotero://open-pdf/0_DHAYHXFX/1">1 Introduction</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/2">2 The model</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/3">3 Non-adiabatic geometric phase</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/4">4 Discussion and conclusion</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/4">Conflict of interest</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/4">Acknowledgments</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/5">Author contributions</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/5">Appendix A Supplementary data</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_DHAYHXFX/5">References</a></li></ul></div>
+					</div>					</li>
+					<li id="item_E5FMNCU4">Chen et al_2019_Nonadiabatic dynamics and geometric phase of an ultrafast rotating electron spin.pdf						<div class="note"><div><p xmlns="http://www.w3.org/1999/xhtml" id="title"><strong>Contents</strong></p><ul xmlns="http://www.w3.org/1999/xhtml" style="list-style-type: none; padding-left:0px" id="toc"><li><a href="zotero://open-pdf/0_E5FMNCU4/1">1 Introduction</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/2">2 The model</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/3">3 Non-adiabatic geometric phase</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/4">4 Discussion and conclusion</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/4">Conflict of interest</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/4">Acknowledgments</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/5">Author contributions</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/5">Appendix A Supplementary data</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_E5FMNCU4/5">References</a></li></ul></div>
+					</div>					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_SU8X2HAV" class="item journalArticle">
+			<h2>Nuclear magnetic resonance detection and spectroscopy of single proteins using quantum logic</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>I. Lovchinsky</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. O. Sushkov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>E. Urbach</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>N. P. De Leon</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>S. Choi</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>K. De Greve</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. Evans</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. Gertner</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>E. Bersin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>C. Müller</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>L. McGuinness</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>F. Jelezko</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. L. Walsworth</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>H. Park</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>M. D. Lukin</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Sensing single proteins with diamonds
+            
+              Nuclear magnetic resonance is a powerful technique for 
+medical imaging and the structural analysis of materials, but is usually
+ associated with large-volume samples. Lovchinsky
+              et al.
+              exploited the magnetic properties of a single spin 
+associated with a defect in diamond and manipulated it with a 
+quantum-logic protocol. They demonstrated the magnetic resonance 
+detection and spectroscopy of multiple nuclear species within individual
+ ubiquitin proteins attached to a specially treated diamond surface at 
+room temperature.
+            
+            
+              Science
+              , this issue p.
+              836
+            
+          , 
+            The quantum properties of diamond are used for magnetic 
+resonance spectroscopy of single proteins.
+          , 
+            Nuclear magnetic resonance spectroscopy is a powerful tool 
+for the structural analysis of organic compounds and biomolecules but 
+typically requires macroscopic sample quantities. We use a sensor, which
+ consists of two quantum bits corresponding to an electronic spin and an
+ ancillary nuclear spin, to demonstrate room temperature magnetic 
+resonance detection and spectroscopy of multiple nuclear species within 
+individual ubiquitin proteins attached to the diamond surface. Using 
+quantum logic to improve readout fidelity and a surface-treatment 
+technique to extend the spin coherence time of shallow nitrogen-vacancy 
+centers, we demonstrate magnetic field sensitivity sufficient to detect 
+individual proton spins within 1 second of integration. This gain in 
+sensitivity enables high-confidence detection of individual proteins and
+ allows us to observe spectral features that reveal information about 
+their chemical composition.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2016-02-19</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.aad8022">10.1126/science.aad8022</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.aad8022">https://www.science.org/doi/10.1126/science.aad8022</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/28 15:48:41</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 467 (Crossref) [2026-02-21]
+Citations: 501 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>351</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>836-841</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6275</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/28 15:48:41</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:27:13</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_T928GY9S">Lovchinsky 等 - 2016 - Nuclear magnetic resonance detection and spectroscopy of single proteins using quantum logic.pdf					</li>
+					<li id="item_5GHYQ3RY">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_2FNJ9AYJ" class="item journalArticle">
+			<h2>Nuclear spin gyroscope based on the nitrogen vacancy center in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Vladimir V. Soshenko</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Stepan V. Bolshedvorskii</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Olga Rubinas</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Vadim N. Sorokin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Andrey N. Smolyaninov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Vadim V. Vorobyov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Alexey V. Akimov</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2021-5-14</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.126.197702">10.1103/PhysRevLett.126.197702</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevLett.126.197702">https://link.aps.org/doi/10.1103/PhysRevLett.126.197702</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:39:30</td>
+					</tr>
+					<tr>
+					<th>档案</th>
+						<td>Q1</td>
+					</tr>
+					<tr>
+					<th>档案编号</th>
+						<td>物理1区 Top</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>8.6999</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 9.0
+5年影响因子: 9.1
+EI: 是
+南农高质量: A
+titleTranslation: 基于金刚石氮空位中心的核自旋陀螺仪。
+Citations: 82 (Crossref) [2026-02-21]
+Citations: 69 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>系列标题</th>
+						<td>无</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>126</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>197702</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>19</td>
+					</tr>
+					<tr>
+					<th>系列描述</th>
+						<td>无</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys Rev Lett</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:39:30</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 15:25:29</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_B94E6QRP">已提交版本					</li>
+					<li id="item_NXXD46NC">Soshenko 等 - 2021 - Nuclear Spin Gyroscope based on the Nitrogen Vacan.pdf					</li>
+					<li id="item_87DTF3BG">Soshenko et al_2021_Nuclear Spin Gyroscope based on the Nitrogen Vacancy Center in Diamond.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_SUZNMZPT" class="item journalArticle">
+			<h2>Observation of a quantum phase from classical rotation of a single spin</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. A. Wood</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>L. C. L. Hollenberg</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. E. Scholten</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>A. M. Martin</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2020-1-17</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.124.020401">10.1103/PhysRevLett.124.020401</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevLett.124.020401">https://link.aps.org/doi/10.1103/PhysRevLett.124.020401</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2020/9/16 09:18:11</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Number: 2
+Citations: 24 (Crossref) [2026-02-21]
+Citations: 14 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>124</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>020401</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2021/6/9 20:45:47</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:30:19</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#broken</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_KNB867DK">Wood 等 - 2020 - Observation of a Quantum Phase from Classical Rota.pdf					</li>
+					<li id="item_Q5DFQ39V">Wood 等。 - 2020 - Observation of a Quantum Phase from Classical Rota.pdf					</li>
+					<li id="item_SCKDTD7F">Wood 等。 - 2020 - Observation of a Quantum Phase from Classical Rota.pdf					</li>
+					<li id="item_XX8ULZK6">Wood 等。 - 2020 - Observation of a Quantum Phase from Classical Rota.pdf					</li>
+					<li id="item_LMB8HCHY">Wood et al_2020_Observation of a Quantum Phase from Classical Rotation of a Single Spin.pdf					</li>
+					<li id="item_4HAQNSS6">Wood et al_2020_Observation of a Quantum Phase from Classical Rotation of a Single Spin.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_P5744LDK" class="item journalArticle">
+			<h2>Photoelectrical imaging and coherent spin-state readout of single nitrogen-vacancy centers in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Petr Siyushev</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Milos Nesladek</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Emilie Bourgeois</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Michal Gulka</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jaroslav Hruby</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Takashi Yamamoto</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Michael Trupke</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Tokuyuki Teraji</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Junichi Isoya</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fedor Jelezko</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.aav2789">10.1126/science.aav2789</a></td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2024/10/2 05:40:54</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2024/10/2 05:41:33</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_MAFYBCCY">Siyushev 等 - Photoelectrical imaging and coherent spin-state re.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_6KKEX2QK" class="item journalArticle">
+			<h2>Quantum logic enhanced sensing in solid-state spin ensembles</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>We demonstrate quantum logic enhanced sensitivity for a 
+macroscopic ensemble of solid-state, hybrid two-qubit sensors. We 
+achieve over a factor of 30 improvement in the single-shot 
+signal-to-noise ratio, translating to an ac magnetic field sensitivity 
+enhancement exceeding an order of magnitude for time-averaged 
+measurements. Using the electronic spins of nitrogen vacancy (NV) 
+centers in diamond as sensors, we leverage the on-site nitrogen nuclear 
+spins of the NV centers as memory qubits, in combination with 
+homogeneous and stable bias and control fields, ensuring that all of the
+  
+∼109 
+ two-qubit sensors are sufficiently identical to permit global control 
+of the NV ensemble spin states. We find quantum logic sensitivity 
+enhancement for multiple measurement protocols with varying optimal 
+sensing intervals, including XY8 and DROID-60 dynamical decoupling, as 
+well as correlation spectroscopy, using an applied ac magnetic field 
+signal. The results are independent of the nature of the target signal 
+and broadly applicable to measurements using NV centers and other 
+solid-state spin ensembles. This work provides a benchmark for 
+macroscopic ensembles of quantum sensors that employ quantum logic or 
+quantum error correction algorithms for enhanced sensitivity.
+ 
+https://doi.org/10.1103/PhysRevLett.131.100801 
+
+© 2023 American Physical Society</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-9-5</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.131.100801">10.1103/PhysRevLett.131.100801</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.100801?utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound">https://
+journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.100801?
+utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/8/12 11:53:09</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 33 (Crossref) [2026-02-21]
+Citations: 46 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>131</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>100801</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>10</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/9/26 11:48:16</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:25:04</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>#duplicate</li>
+					<li>重要</li>
+					<li>Researcher App</li>
+					<li>创新</li>
+					<li>量子技术</li>
+					<li>检测</li>
+					<li>#nosource</li>
+					<li>量子逻辑增强</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_TM8HF6LB">
+<div><div data-schema-version="8"><h1>混合量子比特架构</h1>
+<p><strong><span style="color: rgb(166, 6, 6)">使用额外的存储比特来支持传感比特，为利用量子逻辑实现纠缠增强性能提供了一条极具吸引力的途径</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">将 NV 电子自旋态映射到寿命更长的 13C 核自旋记忆量子比特上，从而克服了 NV 中心光学读出保真度差的问题</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">将 NV 中心固有的氮核自旋用作记忆四比特，与随机分布的 13C 核自旋不同，现场氮核自旋与 NV 电子自旋具有确定的超细耦合，这种均匀耦合使其特别适合转化为 NV 中心的集合</span></strong></p>
+<h1><strong>量子逻辑增强（QLE）传感</strong></h1>
+<p><strong><span style="color: rgb(166, 6, 6)">我们利用双量子比特传感器的宏观集合展示了量子逻辑增强（QLE）传感，每个双量子比特传感器都由一个 NV 电子自旋和与之相连的 15N 核自旋组成。</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">QLE 协议提高了每个组成 NV 的有效读出保真度，与仅使用 NV 电子自旋（即传统 NV 读出）进行的测量相比，单次信噪比（SNR）提高了 33 倍</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">与传统的非 QLE 读出相比，这种观察到的信噪比改善可转化为重复（即时间平均）测量中交流磁场灵敏度的增强，可超过一个数量级</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">重要的是，本方法是普遍适用的（与传感协议或目标信号无关），因此为使用量子逻辑架构的量子传感提供了一个基准，既适用于 NV 中心集合，也适用于其他平台。</span></strong></p>
+<p></p>
+</div></div>
+					</li>
+					<li id="item_UN68NIFL">
+<div><div data-schema-version="8"><p>利用氮核自旋增强NV色心磁场检测灵敏度</p>
+</div></div>
+					</li>
+					<li id="item_8HTG3RN4">
+<div><div data-schema-version="8"><p>研究结果</p>
+<p><strong>1 信噪比提升</strong></p>
+<p>在最佳条件下，通过2000次量子逻辑读出循环，信噪比（SNR）相比传统读出方法提升了33.3倍。这一结果验证了量子逻辑技术在提高读出保真度方面的有效性。</p>
+<p><strong>2 灵敏度增强</strong></p>
+<ul>
+<li>
+在XY8动态解耦序列下，灵敏度增强因子（η_QLE）可达2.4（N≈150次读出）。
+</li>
+<li>
+在DROID-60动态解耦序列下，灵敏度增强因子可达5.7（N≈1400次读出），非量子逻辑增强（非QLE）交流磁场灵敏度为19.6pT/√Hz，量子逻辑增强后降至3.4pT/√Hz。
+</li>
+<li>
+在相关光谱测量中，灵敏度增强因子可达11.3（N≈1000次读出），非量子逻辑增强灵敏度为47pT/√Hz，量子逻辑增强后降至4.2pT/√Hz。
+</li>
+</ul>
+</div></div>
+					</li>
+					<li id="item_CHGUZVY5">
+<p class="plaintext">Comment: 7 pages, 5 figures; Supplemental: 4 pages, 3 figures</p>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_E99GDPCJ">Arunkumar 等 - 2022 - Quantum Logic Enhanced Sensing in Solid-State Spin.pdf					</li>
+					<li id="item_UNA63X8U">Arunkumar 等 - 2023 - Quantum Logic Enhanced Sensing in Solid-State Spin.pdf					</li>
+					<li id="item_LPPHM5DJ">Preprint URL					</li>
+					<li id="item_VHSR3UTW">QLE_supplement.pdf						<div class="note"><div><p xmlns="http://www.w3.org/1999/xhtml" id="title"><strong>Contents</strong></p><ul xmlns="http://www.w3.org/1999/xhtml" style="list-style-type: none; padding-left:0px" id="toc"><li><a href="zotero://open-pdf/0_VHSR3UTW/1">Contents</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_VHSR3UTW/1">Experimental Methods</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_VHSR3UTW/2">Signal-to-Noise Ratio with Quantum Logic Enhanced Readout</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_VHSR3UTW/3">AC Magnetometry</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_VHSR3UTW/4">Considerations for Implementing Quantum Logic Readout in NV Ensembles</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_VHSR3UTW/5">15N Nuclear spin T1</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_VHSR3UTW/6">References</a></li></ul></div>
+					</div>					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_YD4VTGRJ" class="item journalArticle">
+			<h2>Quantum many-body theory for electron spin decoherence in nanoscale nuclear spin baths</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Wen Yang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Wen-Long Ma</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Ren-Bao Liu</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Decoherence of electron spins in nanoscale systems is 
+important to quantum technologies such as quantum information processing
+ and magnetometry. It is also an ideal model problem for studying the 
+crossover between quantum and classical phenomena. At low temperatures 
+or in light-element materials where the spin–orbit coupling is weak, the
+ phonon scattering in nanostructures is less important and the 
+fluctuations of nuclear spins become the dominant decoherence mechanism 
+for electron spins. Since the 1950s, semi-classical noise theories have 
+been developed for understanding electron spin decoherence. In 
+spin-based solid-state quantum technologies, the relevant systems are in
+ the nanometer scale and nuclear spin baths are quantum objects which 
+require a quantum description. Recently, quantum pictures have been 
+established to understand the decoherence and quantum many-body theories
+ have been developed to quantitatively describe this phenomenon. 
+Anomalous quantum effects have been predicted and some have been 
+experimentally confirmed. A systematically truncated cluster-correlation
+ expansion theory has been developed to account for the many-body 
+correlations in nanoscale nuclear spin baths that are built up during 
+electron spin decoherence. The theory has successfully predicted and 
+explained a number of experimental results in a wide range of physical 
+systems. In this review, we will cover this recent progress. The 
+limitations of the present quantum many-body theories and possible 
+directions for future development will also be discussed.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2016-11</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1088/0034-4885/80/1/016001">10.1088/0034-4885/80/1/016001</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://dx.doi.org/10.1088/0034-4885/80/1/016001">https://dx.doi.org/10.1088/0034-4885/80/1/016001</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/8/31 20:48:44</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>20.7</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 物理与天体物理2区
+影响因子: 20.7
+5年影响因子: 20.9
+南农高质量: A
+titleTranslation: 纳米核自旋池中电子自旋消相干的量子多体理论。</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>80</td>
+					</tr>
+					<tr>
+					<th>出版社</th>
+						<td>IOP Publishing</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>016001</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Reports on Progress in Physics</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0034-4885</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Rep. Prog. Phys.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/8/31 20:48:44</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:25:01</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>Quantum Physics</li>
+					<li>Condensed Matter - Mesoscale and Nanoscale Physics</li>
+					<li>#broken</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_74V7IUJQ">
+<p class="plaintext">Comment: 44 pages, 29 figures, corrected many typos and added some references</p>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_NKN96ZVN">已提交版本						<div class="note"><div><p xmlns="http://www.w3.org/1999/xhtml" id="title"><strong>Contents</strong></p><ul xmlns="http://www.w3.org/1999/xhtml" style="list-style-type: none; padding-left:0px" id="toc"><li><a href="zotero://open-pdf/0_NKN96ZVN/1">Abstract</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/1"> Contents</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/2">I Introduction</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/3">II Basic concepts of spin decoherence</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/3">A Temporal ensembles and spatial ensembles</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/4">B Classification of decoherence processes</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/5">C Spin relaxation (T1 process)</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/5">D “True” decoherence by dynamical quantum noises (T process)</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/5">E Inhomogeneous dephasing by static thermal noises (T2 process)</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/6">F Summary</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/6">III Semiclassical noise theory for spin decoherence</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/6">A Basic concept of classical noise</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/6">1 Statistics</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/7">2 Noise auto-correlations</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/7">3 Markovian and non-Markovian noises and stochastic processes</a></li></ul></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/8">B Spin relaxation by transverse noises</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/8">C Pure dephasing by longitudinal noises</a></li></ul></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/9">IV Semi-classical noise theory of dynamical decoupling</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/11">V Quantum noise versus classical noise</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/11">A Static thermal noises</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/11">B Dynamical quantum noises</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/12">C Quantum Gaussian noises</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/12">D Can quantum baths be simulated by classical noises?</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/13">1 One-spin bath</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/13">2 Many-body bath</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/13">3 Electronic and nuclear spin baths</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/14">4 Test of Gaussian noise model in real systems</a></li></ul></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/14">VI Quantum picture of central spin decoherence</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/15">A Decoherence as a result of measurement by environment</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/15">B Coherence recovery by dynamical decoupling</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/16">C Ensemble average</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/16">VII Physical systems</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/16">A Phonon and spin baths</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/16">1 Phonon scattering via spin-orbit coupling</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/17">2 Hyperfine interaction</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/18">3 Intrinsic nuclear spin interactions</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/18">B Electron spin decoherence in solid-state nano-systems</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/18">1 Semiconductor quantum dots</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/19">2 Donors in silicon and related materials</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/20">3 Nitrogen-vacancy centers in diamond and related systems</a></li></ul></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/21">VIII Microscopic quantum many-body theories</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/21">A Microscopic model</a></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/22">B Noises from spin bath dynamics: general considerations</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/22">1 Thermal noise</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/22">2 Quantum noises from nuclear spin clusters</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/23">C Linked-cluster expansion</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/23">1 LCE for spin baths</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/24">2 Ring diagram approximation</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/25">D Cluster-correlation expansion</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/25">1 CCE as infinite summation of LCE diagrams</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/26">2 CCE without LCE: general non-interacting bath state</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/28">3 CCE without LCE: pure bath state</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/30">4 CCE for quantum noise auto-correlation function</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/30">5 Numerical techniques</a></li></ul></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/31">E Real-space cluster expansion</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/32">F Limitations of the many-body theories and possible extension</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/32">IX Quantum decoherence effects</a><ul style="list-style-type: none; padding-left:12px"><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/33">A Single spin fluctuation</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/33">1 Isotropic HFI: inhomogeneous dephasing</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/33">2 Anisotropic HFI: decoherence envelope modulation</a></li></ul></li><li style="padding-top:8px"><a href="zotero://open-pdf/0_NKN96ZVN/34">B Pair-correlation effect</a><ul style="list-style-type: none; padding-left:24px"><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/34">1 Non-local and local pair correlations</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/35">2 Magic coherence recovery</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/36">3 Anomalous decoherence effects</a></li></ul></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/37">C Multi-spin correlation effects</a></li></ul></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/38">X Summary and outlook</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/39">XI Acknowledgements</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/39">A Bloch vector representation of single spin dynamics</a></li><li style="padding-top:4px"><a href="zotero://open-pdf/0_NKN96ZVN/39"> References</a></li></ul></div>
+					</div>					</li>
+					<li id="item_VNB8C5H6">Quantum many-body theory for electron spin decoherence in nanoscale nuclear spin baths					</li>
+					<li id="item_GXR9Y9ES">Yang 等 - 2017 - Quantum many-body theory for electron spin decoher.pdf					</li>
+					<li id="item_VEMNX3T5">Yang et al_2016_Quantum many-body theory for electron spin decoherence in nanoscale nuclear.pdf					</li>
+					<li id="item_3T8AHRPX">Yang_2017_Rep._Prog._Phys._80_016001.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_H6KK4CKW" class="item journalArticle">
+			<h2>Quantum measurement of a rapidly rotating spin qubit in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Alexander A. Wood</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Emmanuel Lilette</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Yaakov Y. Fein</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Nikolas Tomek</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Liam P. McGuinness</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Lloyd C. L. Hollenberg</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Robert E. Scholten</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Andy M. Martin</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Single-qubit sensing in a physically rotating reference frame 
+with defect centers in diamond.
+          , 
+            
+              A controlled qubit in a rotating frame opens new 
+opportunities to probe fundamental quantum physics, such as geometric 
+phases in physically rotating frames, and can potentially enhance 
+detection of magnetic fields. Realizing a single qubit that can be 
+measured and controlled during physical rotation is experimentally 
+challenging. We demonstrate quantum control of a single nitrogen-vacancy
+ (NV) center within a diamond rotated at 200,000 rpm, a rotational 
+period comparable to the NV spin coherence time
+              T
+              2
+              . We stroboscopically image individual NV centers that 
+execute rapid circular motion in addition to rotation and demonstrate 
+preparation, control, and readout of the qubit quantum state with lasers
+ and microwaves. Using spin-echo interferometry of the rotating qubit, 
+we are able to detect modulation of the NV Zeeman shift arising from the
+ rotating NV axis and an external DC magnetic field. Our work 
+establishes single NV qubits in diamond as quantum sensors in the 
+physically rotating frame and paves the way for the realization of 
+single-qubit diamond-based rotation sensors.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2018-05-04</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/sciadv.aar7691">10.1126/sciadv.aar7691</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/sciadv.aar7691">https://www.science.org/doi/10.1126/sciadv.aar7691</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/6/13 06:39:08</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>12.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>JCR分区: Q1
+中科院分区升级版: 综合性期刊1区
+影响因子: 12.5
+5年影响因子: 14.1
+EI: 是
+南农高质量: A
+titleTranslation: 金刚石中快速旋转自旋量子比特的量子测量。
+Citations: 47 (Crossref) [2026-02-21]
+Citations: 42 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>4</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>eaar7691</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science Advances</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2375-2548</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Sci. Adv.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/6/13 06:39:08</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 05:00:28</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_NIZ7LD7U">Wood 等 - 2018 - Quantum measurement of a rapidly rotating spin qub.pdf					</li>
+					<li id="item_ZDKAWJLP">Wood et al_2018_Quantum measurement of a rapidly rotating spin qubit in diamond.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_SCMBXXPR" class="item journalArticle">
+			<h2>Quantum sensing with arbitrary frequency resolution</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. M. Boss</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>K. S. Cujia</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>J. Zopes</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>C. L. Degen</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Enhancing quantum sensing
+            
+              The quantum properties of the nitrogen vacancy (NV) defect
+ in diamond can be used as an atomic compass needle that is sensitive to
+ tiny variations in magnetic field. Schmitt
+              et al.
+              and Boss
+              et al.
+              successfully enhanced this sensitivity by several orders 
+of magnitude (see the Perspective by Jordan). They applied a sequence of
+ pulses to the NV center, the timing of which was set by and compared 
+with a highly stable oscillator. This allowed them to measure the 
+frequency of an oscillating magnetic field (megahertz bandwidth) with 
+submillihertz resolution. Such enhanced precision measurement could be 
+applied, for example, to improve nuclear magnetic resonance-based 
+imaging protocols of single molecules.
+            
+            
+              Science
+              , this issue p.
+              832
+              , p.
+              837
+              ; see also p.
+              802
+            
+          , 
+            A protocol is developed for the enhanced quantum sensing of 
+magnetic fields.
+          , 
+            
+              Quantum sensing takes advantage of well-controlled quantum
+ systems for performing measurements with high sensitivity and 
+precision. We have implemented a concept for quantum sensing with 
+arbitrary frequency resolution, independent of the qubit probe and 
+limited only by the stability of an external synchronization clock. Our 
+concept makes use of quantum lock-in detection to continuously probe a 
+signal of interest. Using the electronic spin of a single 
+nitrogen-vacancy center in diamond, we demonstrate detection of 
+oscillating magnetic fields with a frequency resolution of 70 microhertz
+ over a megahertz bandwidth. The continuous sampling further guarantees 
+an enhanced sensitivity, reaching a signal-to-noise ratio in excess of 
+10
+              4
+              for a 170-nanotesla test signal measured during a 1-hour 
+interval. Our technique has applications in magnetic resonance 
+spectroscopy, quantum simulation, and sensitive signal detection.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2017-05-26</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.aam7009">10.1126/science.aam7009</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.aam7009">https://www.science.org/doi/10.1126/science.aam7009</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/29 00:21:27</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>http://www.sciencemag.org/about/science-licenses-journal-article-reuse</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 275 (Crossref) [2026-02-21]
+Citations: 310 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>356</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>837-840</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6340</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/29 00:21:27</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:44:36</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_MQPLNSRW">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_7E5HEIJ5" class="item journalArticle">
+			<h2>Quantum sensors for biomedical applications</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Nabeel Aslam</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Hengyun Zhou</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Elana K. Urbach</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Matthew J. Turner</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Ronald L. Walsworth</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Mikhail D. Lukin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Hongkun Park</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-02-03</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s42254-023-00558-3">10.1038/s42254-023-00558-3</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s42254-023-00558-3">https://www.nature.com/articles/s42254-023-00558-3</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2024/1/31 19:24:09</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>39.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>TLDR: The status of quantum sensing applications is presented,
+ the path towards real-world applications on the molecular, cellular and
+ organism scale is evaluated, and the focus is on two promising quantum 
+sensing platforms: optically pumped atomic magnetometers, and 
+nitrogen–vacancy centres in diamond.
+titleTranslation: 用于生物医学应用的量子传感器
+JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 39.5
+5年影响因子: 53.2
+EI: 是
+南农高质量: A
+Citations: 404 (Crossref) [2026-02-21]
+Citations: 420 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>157-169</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature Reviews Physics</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2522-5820</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nat Rev Phys</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2024/1/31 19:24:09</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:50:52</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>综述</li>
+					<li>应用</li>
+					<li>磁力仪</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_SLVMH5YM">
+<div><div data-schema-version="8"><p>第一种是基于OPMs的MEG，重点介绍了其相对于传统的基于超导量子干涉器件( Superconducting quantum interference devices，SQUIDs )的MEG的优势。</p>
+<p>第二个案例研究讨论了具有NV色心集合的金刚石传感器芯片如何用于生物细胞和组织的磁传感和显微成像。</p>
+<p>第三是致力于将NV - diamond传感应用于纳米级和微米级的核磁共振成像和光谱学。</p>
+<p>最后的案例研究将讨论纳米金刚石中具有NV色心的纳米测温。</p>
+</div></div>
+					</li>
+					<li id="item_DEPER658">
+<div><div data-schema-version="8"><p>研究结果</p>
+<ul>
+<li>
+利用NV中心实现了对SKBR3癌细胞表面HER2受体的磁性标记和成像，分辨率达到微米级。
+</li>
+<li>
+NV-NMR技术实现了对单个蛋白质的纳米级检测，揭示了其化学结构和动力学特性。
+</li>
+<li>
+在纳米热测量中，NV中心展示了高达~1 K Hz^-1/2的温度灵敏度，在生物体内实现了高精度的温度监测。
+</li>
+</ul>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_KTY8823J">Aslam 等 - 2023 - Quantum sensors for biomedical applications.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_7J5JN3XN" class="item journalArticle">
+			<h2>Resonant versus non-resonant spin readout of a nitrogen-vacancy center in diamond under cryogenic conditions</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>The last decade has seen an explosive growth in the use of 
+color centers for metrology applications, the paradigm example arguably 
+being the nitrogen-vacancy (NV) center in diamond. Here, we focus on the
+ regime of cryogenic temperatures and examine the impact of 
+spin-selective, narrow-band laser excitation on NV readout. 
+Specifically, we demonstrate a more than fourfold improvement in 
+sensitivity compared to that possible with nonresonant (green) 
+illumination, largely due to a boost in readout contrast and integrated 
+photon count. We also leverage nuclear spin relaxation under resonant 
+excitation to polarize the  
+N14 
+ host, which we then prove beneficial for spin magnetometry. These 
+results open opportunities in the application of NV sensing to the 
+investigation of condensed matter systems, particularly those exhibiting
+ superconducting, magnetic, or topological phases selectively present at
+ low temperatures.
+ 
+https://doi.org/10.1103/PhysRevLett.131.236901 
+
+© 2023 American Physical Society</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-12-5</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.131.236901">10.1103/PhysRevLett.131.236901</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.236901?utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound">https://
+journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.236901?
+utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2026/4/23 06:46:58</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 6 (Crossref) [2026-04-23]
+Citations: 5 (SemanticScholar) [2026-04-23]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>131</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>236901</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>23</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/12/18 21:26:56</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:23:07</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>NV材料/制备/相干</li>
+					<li>Researcher App</li>
+					<li>创新</li>
+					<li>共振读出</li>
+					<li>共振激发</li>
+					<li>#nosource</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_6ZEIZLXM">
+<div><div data-schema-version="8"><p><strong>创新点</strong></p>
+<ol>
+<li>
+<strong>共振读出方法</strong>：首次在低温条件下对比了共振激光和非共振激光在NV中心自旋读出中的应用，发现共振读出方法能够显著提高读出效率和对比度。
+</li>
+<li>
+<strong>核自旋初始化</strong>：利用共振读出实现了NV中心核自旋的有效初始化，为NV中心在复杂量子系统研究中的应用提供了新的途径。
+</li>
+<li>
+<strong>磁敏感度提升</strong>：通过核自旋初始化，显著提高了NV中心对外部磁场变化的敏感度，为高精度量子传感提供了新的方案。
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_4HN5QDHQ">
+<div><div data-schema-version="8"><p><strong>研究结果</strong></p>
+<ol>
+<li>
+<strong>读出效率提升</strong>：实验结果表明，相比非共振读出方法，共振读出方法的读出效率提高了约4.3倍。
+</li>
+<li>
+<strong>对比度增强</strong>：共振读出方法的对比度达到了78%，显著高于非共振读出方法的对比度。
+</li>
+<li>
+<strong>磁敏感度提高</strong>：通过核自旋初始化，NV中心对外部磁场变化的敏感度提高了约6-7倍。
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_W5WNJLVH">
+<div><div data-schema-version="8"><p>创新点</p>
+<ol>
+<li>
+<p><strong>共振激发提高自旋读出灵敏度</strong>：</p>
+<ul>
+<li>
+首次在低温条件下，通过共振激发显著提高了NV中心的自旋读出灵敏度和对比度。
+</li>
+<li>
+揭示了共振激发下光子计数和对比度增强的物理机制，为高性能量子传感器的开发提供了新的思路。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>核自旋极化新方法</strong>：</p>
+<ul>
+<li>
+发现了共振激发下NV中心电子自旋与宿主14N核自旋的快速相互作用机制，实现了无需射频脉冲的核自旋极化。
+</li>
+<li>
+这一新方法简化了实验步骤，降低了成本，同时提高了核自旋极化的效率和稳定性。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>量子传感应用拓展</strong>：</p>
+<ul>
+<li>
+将共振激发和核自旋极化新方法应用于磁传感领域，显著提高了磁传感的灵敏度。
+</li>
+<li>
+为研究低温下凝聚态物理现象提供了新的量子传感工具，拓展了NV中心在量子科技领域的应用范围。
+</li>
+</ul>
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_4NLKIKPE">
+<div><div data-schema-version="8"><p>研究结果</p>
+<ol>
+<li>
+<p><strong>自旋读出灵敏度提升</strong>：</p>
+<ul>
+<li>
+在共振激发下，NV中心的自旋读出灵敏度相比非共振激发提高了约4倍（具体数值因NV中心而异）。
+</li>
+<li>
+例如，对于某个特定的NV中心，共振激发下的磁传感灵敏度达到了0.90±0.12 µT Hz-1/2，而非共振激发下仅为6.27±2.22 µT Hz-1/2。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>核自旋极化效率</strong>：</p>
+<ul>
+<li>
+通过共振激发和选择性微波脉冲，实现了高达64%的核自旋极化效率。
+</li>
+<li>
+这一高效率的核自旋极化方法为进一步提高量子传感的灵敏度提供了新的途径。
+</li>
+</ul>
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_SNJJN4KE">
+<div><p>VerificationStatus: web_verified_this_pass</p></div>
+					</li>
+					<li id="item_DARRZCA5">
+<div><p>VerificationStatus: web_verified_this_pass</p></div>
+					</li>
+					<li id="item_PHHZGZKN">
+<div><p>VerificationStatus: web_verified_this_pass</p></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_CRSM8IHB">Monge 等 - 2023 - Resonant Versus Nonresonant Spin Readout of a Nitr.pdf					</li>
+					<li id="item_HCWCPMVP">Monge 等 - 2023 - Resonant Versus Nonresonant Spin Readout of a Nitr.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_CWFR7XXD" class="item journalArticle">
+			<h2>Single spin detection by magnetic resonance force microscopy</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>D. Rugar</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. Budakian</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>H. J. Mamin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>B. W. Chui</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>7/2004</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/nature02658">10.1038/nature02658</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/nature02658">https://www.nature.com/articles/nature02658</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/29 00:09:52</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>48.5</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>License</th>
+						<td>http://www.springer.com/tdm</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 1428 (Crossref) [2026-02-21]
+Citations: 1435 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>430</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>329-332</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0028-0836, 1476-4687</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6997</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Nature</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/29 00:09:52</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:27:42</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_XK73RBJI">PDF					</li>
+					<li id="item_SMUPVK3K">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_7XSHLA9Z" class="item journalArticle">
+			<h2>Supplementary information: Heterodyne sensing of microwaves with a quantum sensor</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jonas Meinel</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Vadim Vorobyov</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Boris Yavkin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Durga Dasari</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Hitoshi Sumiya</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Shinobu Onoda</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Junichi Isoya</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jorg Wrachtrup</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>Zotero</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/8/8 10:26:06</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/2/21 22:44:03</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_HFMNLXXA">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_VEVHN7SH" class="item journalArticle">
+			<h2>Temperature dependence of photoluminescence intensity and spin contrast in nitrogen-vacancy centers</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>S. Ernst</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>P. J. Scheidegger</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>S. Diesch</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>L. Lorenzelli</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>C. L. Degen</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>We report on measurements of the photoluminescence (PL) 
+properties of single nitrogen-vacancy (NV) centers in diamond at 
+temperatures between 4-300 K. We observe a strong reduction of the PL 
+intensity and spin contrast between ca. 10-100 K that recovers to high 
+levels below and above. Further, we find a rich dependence on magnetic 
+bias field and crystal strain. We develop a comprehensive model based on
+ spin mixing and orbital hopping in the electronic excited state that 
+quantitatively explains the observations. Beyond a more complete 
+understanding of the excited-state dynamics, our work provides a novel 
+approach for probing electron-phonon interactions and a predictive tool 
+for optimizing experimental conditions for quantum applications.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-8-24</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.131.086903">10.1103/PhysRevLett.131.086903</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevLett.131.086903">https://link.aps.org/doi/10.1103/PhysRevLett.131.086903</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/12/24 17:34:44</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>titleTranslation: 氮空位中心光致发光强度和自旋对比度的温度依赖性
+JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 9.0
+5年影响因子: 9.1
+EI: 是
+南农高质量: A
+Citations: 17 (Crossref) [2026-02-21]
+Citations: 12 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>131</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>086903</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/12/24 17:34:44</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:26:21</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>温度</li>
+					<li>理论模型</li>
+					<li>创新</li>
+					<li>声子耦合</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_HCLUDKDP">
+<div><div data-schema-version="8"><p><strong>创新点</strong></p>
+<ul>
+<li>
+<strong>综合理论模型</strong>：构建了一个基于激发态自旋混合和轨道跃迁机制的综合理论模型，能够定量描述NV中心在宽温度、磁偏置场和晶格应变范围内的PL强度和自旋对比。
+</li>
+<li>
+<strong>新测量方法</strong>：提出了一种新的测量方法，用于探测电子-声子相互作用和贡献模式，适用于共振激光PL激发光谱或激发态ODMR线运动变窄测量不可用的情况。
+</li>
+</ul>
+<p><strong>预测工具</strong>：提供了一种预测和优化NV中心在量子应用中PL强度和自旋对比的工具，对于实现高保真度自旋读出和高灵敏度磁测量具有重要意义。</p>
+</div></div>
+					</li>
+					<li id="item_BZ94F734">
+<div><div data-schema-version="8"><p><strong>研究结果</strong></p>
+<ul>
+<li>
+<strong>PL强度和自旋对比的温度依赖性</strong>：在10-100K的温度范围内，NV中心的PL强度和自旋对比显著降低，并在约35K处达到最小值。在低于10K和高于100K的温度下，PL强度和自旋对比恢复。
+</li>
+<li>
+<strong>磁偏置场和晶格应变的影响</strong>：磁偏置场和晶格应变对PL强度和自旋对比有显著影响。随着磁偏置场的增加，PL最小值变得不那么明显并移向更高温度。在高晶格应变下，自旋对比在低于10K的温度下已经显著降低。
+</li>
+<li>
+<strong>模型拟合与仿真</strong>：通过拟合实验数据，校准了模型中的参数。仿真结果与实验数据吻合良好，能够定量描述NV中心在不同条件下的PL强度和自旋对比。
+</li>
+</ul>
+</div></div>
+					</li>
+					<li id="item_ZX4BLZZF">
+<div><div data-schema-version="8"><p>创新点</p>
+<ol>
+<li>
+<strong>全面的实验测量</strong>：在广泛的温度范围内（4K至300K）对单个NV中心的PL强度和自旋对比度进行了详细测量，提供了丰富的实验数据。
+</li>
+<li>
+<strong>理论模型的创新</strong>：基于自旋混合和轨道跳跃机制，开发了一个能够定量描述NV中心激发态动力学的理论模型。该模型不仅解释了实验观察到的现象，还提供了对电子-声子相互作用的新见解。
+</li>
+<li>
+<strong>多参数综合分析</strong>：同时考虑了温度、磁场和晶体应变对NV中心PL强度和自旋对比度的影响，为实验条件的优化提供了理论指导。
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_FJ78DW2E">
+<div><div data-schema-version="8"><p>研究结果</p>
+<ol>
+<li>
+<p><strong>温度依赖性</strong>：</p>
+<ul>
+<li>
+<strong>10K以下</strong>：PL强度和自旋对比度基本保持不变。
+</li>
+<li>
+<strong>10K至100K</strong>：PL强度和自旋对比度显著降低，出现最小值（约35K）。
+</li>
+<li>
+<strong>100K以上</strong>：PL强度和自旋对比度逐渐恢复，室温下达到较高水平。
+</li>
+</ul>
+</li>
+<li>
+<strong>磁场依赖性</strong>：在特定磁场下（如ES能级反交叉点），PL强度和自旋对比度出现显著降低。
+</li>
+<li>
+<strong>晶体应变依赖性</strong>：高应变NV中心在低温下（低于10K）即表现出显著的自旋对比度降低。
+</li>
+<li>
+<strong>理论模型验证</strong>：通过数值模拟，理论模型与实验数据表现出良好的一致性，特别是在10K至100K温度范围内的显著对比度降低现象得到了成功解释。
+</li>
+</ol>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_ZG78P3QV">Ernst 等 - 2023 - Temperature dependence of photoluminescence intens.pdf					</li>
+					<li id="item_9B2YUMTB">Ernst 等 - 2023 - Temperature Dependence of Photoluminescence Intens.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_3ULAEHNK" class="item journalArticle">
+			<h2>Temperature-dependent photophysics of single NV centers in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jodok Happacher</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Juanita Bocquel</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Hossein T. Dinani</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Märta A. Tschudin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Patrick Reiser</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>David A. Broadway</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Jeronimo R. Maze</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Patrick Maletinsky</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>We present a comprehensive study of the temperature and 
+magnetic-field dependent photoluminescence (PL) of individual NV centers
+ in diamond, spanning the temperature-range from cryogenic to ambient 
+conditions. We directly observe the emergence of the NV's 
+room-temperature effective excited state structure and provide a clear 
+explanation for a previously poorly understood broad quenching of NV PL 
+at intermediate temperatures around 50 K. We develop a model that 
+quantitatively explains all of our findings, including the strong impact
+ that strain has on the temperaturedependence of the NV's PL. These 
+results complete our understanding of orbital averaging in the NV 
+excited state and have significant implications for the fundamental 
+understanding of the NV center and its applications in quantum sensing.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-8-24</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevLett.131.086904">10.1103/PhysRevLett.131.086904</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevLett.131.086904">https://link.aps.org/doi/10.1103/PhysRevLett.131.086904</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2024/3/4 08:31:08</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>9.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>titleTranslation: 金刚石中单个 NV 色心的温度依赖性光物理
+JCR分区: Q1
+中科院分区升级版: 物理与天体物理1区
+影响因子: 9.0
+5年影响因子: 9.1
+EI: 是
+南农高质量: A
+Citations: 16 (Crossref) [2026-02-21]
+Citations: 10 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>131</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>086904</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Physical Review Letters</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0031-9007, 1079-7114</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Phys. Rev. Lett.</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2024/3/4 08:31:08</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:26:37</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>温度</li>
+					<li>#duplicate</li>
+					<li>理论模型</li>
+					<li>创新</li>
+					<li>声子耦合</li>
+					<li>10能级</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_86UCNYG7">
+<div><div data-schema-version="8"><p><strong>创新点</strong></p>
+<ol>
+<li>
+<strong>系统性研究</strong>：首次系统地研究了NV中心从低温到室温的光物理性质变化，填补了该领域的研究空白。
+</li>
+<li>
+<strong>模型创新</strong>：构建了考虑声子诱导轨道耦合的NV中心光物理模型，能够定量解释实验观察到的现象。
+</li>
+<li>
+<strong>参数提取</strong>：通过拟合实验数据，成功提取了NV中心的内禀参数和声子耦合参数，为理解NV中心的光物理性质提供了重要依据。
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_C342GJRZ">
+<div><div data-schema-version="8"><p><strong>研究结果</strong></p>
+<ol>
+<li>
+<p><strong>PL强度随温度变化</strong>：</p>
+<ul>
+<li>
+低温下（T&lt;10K），NV中心的PL强度基本不受温度影响。
+</li>
+<li>
+随着温度增加（10K&lt;T&lt;60K），PL强度显著变宽，中间温度（约50K）附近出现PL淬灭现象。
+</li>
+<li>
+温度进一步增加（T&gt;60K），PL强度逐渐恢复，并在室温下达到稳定状态。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ESLAC和RT-ESLAC现象</strong>：</p>
+<ul>
+<li>
+低温下（T=2K），观察到多个由ESLAC引起的PL强度淬灭峰。
+</li>
+<li>
+随着温度增加，这些淬灭峰逐渐合并并变宽，最终在室温下形成一个由RT-ESLAC引起的单一淬灭峰。
+</li>
+<li>
+RT-ESLAC的出现温度具有强烈的应变依赖性，高应变NV中心在较低温度下即可观察到RT-ESLAC现象。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>轨道平均效应</strong>：</p>
+<ul>
+<li>
+声子诱导的轨道耦合速率随温度按T^5规律变化，与先前研究一致。
+</li>
+</ul>
+</li>
+</ol>
+<p>轨道耦合速率的大小直接影响NV中心的PL强度变化幅度和RT-ESLAC的出现温度。</p>
+</div></div>
+					</li>
+					<li id="item_VCCPI9D5">
+<div><div data-schema-version="8"><p>创新点</p>
+<ol>
+<li>
+<strong>系统研究NV中心激发态的温度依赖性</strong>：首次系统研究了NV中心从低温到高温范围内激发态结构的演变过程。
+</li>
+<li>
+<strong>定量解释PL强度的温度依赖性</strong>：通过两声子轨道平均模型，定量解释了NV中心PL强度随温度变化的复杂现象。
+</li>
+<li>
+<strong>揭示应变对NV中心光物理性质的影响</strong>：实验和模型均表明，应变对NV中心PL特性的温度依赖性具有显著影响，为实际应用提供了优化方向。
+</li>
+</ol>
+</div></div>
+					</li>
+					<li id="item_NSVQ489L">
+<div><div data-schema-version="8"><p>研究结果</p>
+<ol>
+<li>
+<strong>PL强度随温度的变化</strong>：实验观察到，在约50K时NV中心的PL强度出现显著下降，随后在更高温度下恢复。通过模型计算，确认这一现象是由两声子轨道平均过程导致的。
+</li>
+<li>
+<strong>ESLAC峰的演变</strong>：在低温下，观察到多个由ESLAC引起的PL强度下降峰；随着温度升高，这些峰逐渐展宽并合并，最终在较高温度下被室温ESLAC峰取代。
+</li>
+<li>
+<strong>两声子轨道平均速率的提取</strong>：通过拟合实验数据，提取了两声子轨道平均过程的速率常数，与先前研究结果相符。
+</li>
+</ol>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_6PFUHUCG">Happacher 等 - 2023 - Temperature Dependent Photophysics of Single NV Ce.pdf					</li>
+					<li id="item_HUU4SVGM">Happacher 等 - 2023 - Temperature Dependent Photophysics of Single NV Centers in Diamond.pdf					</li>
+					<li id="item_STNMQWIH">Happacher 等 - 2023 - Temperature-Dependent Photophysics of Single NV Ce.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_XMQB546S" class="item journalArticle">
+			<h2>The role of electrolytes in the relaxation of near-surface spin defects in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Fabian A. Freire-Moschovitis</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Roberto Rizzato</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Anton Pershin</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Moritz R. Schepp</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Robin D. Allert</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Lina M. Todenhagen</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Martin S. Brandt</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Adam Gali</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Dominik B. Bucher</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Quantum sensing with spin defects in diamond, such as the 
+nitrogen vacancy (NV) center, enables the detection of various chemical 
+species on the nanoscale. Molecules or ions with unpaired electronic 
+spins are typically probed by their influence on the NV center’s spin 
+relaxation. Whereas it is well-known that paramagnetic ions reduce the 
+NV center’s relaxation time (T1), here we report on the opposite effect 
+for diamagnetic ions. We demonstrate that millimolar concentrations of 
+aqueous diamagnetic electrolyte solutions increase the T1 time of 
+near-surface NV center ensembles compared to pure water. To elucidate 
+the underlying mechanism of this surprising effect, single and double 
+quantum NV experiments are performed, which indicate a reduction of 
+magnetic and electric noise in the presence of diamagnetic electrolytes.
+ In combination with ab initio simulations, we propose that a change in 
+the interfacial band bending due to the formation of an electric double 
+layer leads to a stabilization of fluctuating charges at the interface 
+of an oxidized diamond. This work not only helps to understand noise 
+sources in quantum systems but could also broaden the application space 
+of quantum sensors toward electrolyte sensing in cell biology, 
+neuroscience, and electrochemistry.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2023-06-13</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1021/acsnano.3c01298">10.1021/acsnano.3c01298</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01298">https://pubs.acs.org/doi/10.1021/acsnano.3c01298</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2023/12/24 17:34:57</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>16.0</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>titleTranslation: 电解质在金刚石近表面自旋缺陷松弛中的作用
+JCR分区: Q1
+中科院分区升级版: 材料科学1区
+影响因子: 16.0
+5年影响因子: 16.4
+EI: 是
+南农高质量: A
+Citations: 22 (Crossref) [2026-02-21]
+Citations: 22 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>17</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>10474-10485</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>ACS Nano</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1936-0851, 1936-086X</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>11</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>ACS Nano</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2023/12/24 17:34:57</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:24:35</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>十分重要</li>
+					<li>NV色心</li>
+					<li>#duplicate</li>
+					<li>弛豫</li>
+					<li>从头计算</li>
+					<li>创新</li>
+					<li>电解质</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_EW6Q6GZ8">
+<div><div data-schema-version="8"><p><strong><span style="color: rgb(166, 6, 6)">我们观察到抗磁性离子增加了NV中心的T1弛豫时间</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">我们证明了这种效应是可逆的，表面敏感的，并且对毫摩尔浓度敏感</span></strong></p>
+<p><strong><span style="color: rgb(166, 6, 6)">通过将移动电子动态捕获到吉布斯能量较低的位置，可以减少金刚石界面处的磁噪声和电噪声</span></strong></p>
+</div></div>
+					</li>
+					<li id="item_6MBUUHNR">
+<div><div data-schema-version="8"><p>研究结果</p>
+<ol>
+<li>
+<p><strong>T1弛豫时间的变化</strong>：</p>
+<ul>
+<li>
+在500 mM NaCl溶液中，NV中心的T1弛豫时间相比纯水增加了约2.04倍。
+</li>
+<li>
+1 μM MnCl2溶液中，NV中心的T1弛豫时间相比纯水减少了约53%。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>噪声减少的量化</strong>：</p>
+<ul>
+<li>
+双量子弛豫测量显示，在NaCl溶液中，NV中心的双量子T1弛豫时间增加了约2.84倍，表明电噪声的显著减少。
+</li>
+</ul>
+</li>
+<li>
+<p><strong>表面暗自旋的响应</strong>：</p>
+<ul>
+<li>
+在NaCl溶液中，表面暗自旋的弛豫时间显著延长，从几乎无法检测到具有明确的弛豫时间（约7.20 μs）。
+</li>
+</ul>
+</li>
+</ol>
+</div></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_U6KZVN65">Freire-Moschovitis 等 - 2023 - The Role of Electrolytes in the Relaxation of Near.pdf					</li>
+					<li id="item_ZVHT8TP2">Freire-Moschovitis 等 - 2023 - The Role of Electrolytes in the Relaxation of Near.pdf					</li>
+					<li id="item_ZLINPU2L">nn3c01298_si_001.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_2CFVQU9G" class="item journalArticle">
+			<h2>Universal dynamical decoupling of a single solid-state spin from a spin bath</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>G. De Lange</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>Z. H. Wang</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>D. Ristè</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>V. V. Dobrovitski</td>
+					</tr>
+					<tr>
+						<th class="author">作者</th>
+						<td>R. Hanson</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>Avoiding Loss in a Quantum System
+            
+              Single electron spins in solid-state environments have 
+been explored as candidates for quantum information storage and 
+computation; however, they often interact strongly with their 
+surroundings and lose the stored information on the time scale of pico- 
+to milliseconds. Dynamical decoupling schemes have been introduced to 
+“undo” the effects of this interaction by applying a sequence of control
+ pulses that reverse the undesirable evolution of the system.
+              
+                De Lange
+                et al.
+              
+              (p.
+              60
+              , published online 9 September) tested several decoupling 
+schemes on a nitrogen vacancy center in diamond and found that a scheme 
+with evenly spaced pulses with double-axis decoupling could prolong the 
+coherence time of an arbitrary spin state up to 25-fold.
+            
+          , 
+            The coherence time of single spins is extended by a sequence
+ of microwave pulses.
+          , 
+            Controlling the interaction of a single quantum system with 
+its environment is a fundamental challenge in quantum science and 
+technology. We strongly suppressed the coupling of a single spin in 
+diamond with the surrounding spin bath by using double-axis dynamical 
+decoupling. The coherence was preserved for arbitrary quantum states, as
+ verified by quantum process tomography. The resulting coherence time 
+enhancement followed a general scaling with the number of decoupling 
+pulses. No limit was observed for the decoupling action up to 136 
+pulses, for which the coherence time was enhanced more than 25 times 
+compared to that obtained with spin echo. These results uncover a new 
+regime for experimental quantum science and allow us to overcome a major
+ hurdle for implementing quantum information protocols.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>10/2010</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1126/science.1192739">10.1126/science.1192739</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.science.org/doi/10.1126/science.1192739">https://www.science.org/doi/10.1126/science.1192739</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2025/7/28 14:50:02</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>45.8</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 687 (Crossref) [2026-02-21]
+Citations: 685 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>330</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>60-63</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0036-8075, 1095-9203</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>6000</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>Science</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2025/7/28 14:50:02</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:23:22</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV量子传感/器件</li>
+					<li>#duplicate</li>
+				</ul>
+				<h3 class="notes">笔记：</h3>
+				<ul class="notes">
+					<li id="item_VF45X9NW">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_TSFJ87EE">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+					<li id="item_NFG2I39R">
+<div><p>VerificationStatus: legacy_high_confidence_not_rechecked_this_pass</p></div>
+					</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_JYI498MX">已提交版本					</li>
+					<li id="item_PJJJQ4AY">De Lange 等 - 2010 - Universal dynamical decoupling of a single solid-state spin from a spin bath.PDF					</li>
+					<li id="item_TD6ATJ7L">De Lange 等 - 2010 - Universal dynamical decoupling of a single solid-state spin from a spin bath.pdf					</li>
+					<li id="item_3HKAQ86W">PDF					</li>
+					<li id="item_DT6ZFEAG">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_UQAJRCDW" class="item journalArticle">
+			<h2>Vibrationally resolved optical excitations of the nitrogen-vacancy center in diamond</h2>
+				<table>
+					<tbody><tr>
+						<th>条目类型</th>
+						<td>期刊文章</td>
+					</tr>
+					<tr>
+					<th>摘要</th>
+						<td>A comprehensive description of the optical cycle of spin 
+defects in solids requires the understanding of the electronic and 
+atomistic structure of states with different spin multiplicity, 
+including singlet states which are particularly challenging from a 
+theoretical standpoint. We present a general framework, based on 
+spin-flip time-dependent density function theory, to determine the 
+excited state potential energy surfaces of the many-body singlet states 
+of spin defects; we then predict the vibrationally resolved absorption 
+spectrum between singlet shelving states of a prototypical defect, the 
+nitrogen-vacancy center in diamond. Our results, which are in very good 
+agreement with experiments, provide an interpretation of the measured 
+spectra and reveal the key role of specific phonons in determining 
+absorption processes, and the notable influence of non-adiabatic 
+interactions. The insights gained from our calculations may be useful in
+ defining strategies to improve infrared-absorption-based magnetometry 
+and optical pumping schemes. The theoretical framework developed here is
+ general and applicable to a variety of other spin defects and 
+materials.</td>
+					</tr>
+					<tr>
+					<th>日期</th>
+						<td>2022-11-15</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1038/s41524-022-00928-y">10.1038/s41524-022-00928-y</a></td>
+					</tr>
+					<tr>
+					<th>网址</th>
+						<td><a href="https://www.nature.com/articles/s41524-022-00928-y?utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound">https://
+www.nature.com/articles/s41524-022-00928-y?
+utm_source=researcher_app&amp;utm_medium=referral&amp;utm_campaign=RESR_MRKT_Researcher_inbound</a></td>
+					</tr>
+					<tr>
+					<th>访问时间</th>
+						<td>2022/12/26 17:30:23</td>
+					</tr>
+					<tr>
+					<th>语言</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>文库编目</th>
+						<td>11.9</td>
+					</tr>
+					<tr>
+					<th>索书号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>其他</th>
+						<td>Citations: 36 (Crossref) [2026-02-21]
+Citations: 40 (SemanticScholar) [2026-02-21]</td>
+					</tr>
+					<tr>
+					<th>卷次</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>页码</th>
+						<td>238</td>
+					</tr>
+					<tr>
+					<th>出版物</th>
+						<td>npj Computational Materials</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2057-3960</td>
+					</tr>
+					<tr>
+					<th>期号</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>刊名简称</th>
+						<td>npj Comput Mater</td>
+					</tr>
+					<tr>
+					<th>添加日期</th>
+						<td>2022/11/17 21:52:18</td>
+					</tr>
+					<tr>
+					<th>修改日期</th>
+						<td>2026/4/28 04:24:58</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">标签：</h3>
+				<ul class="tags">
+					<li>/unread</li>
+					<li>NV色心</li>
+					<li>#broken</li>
+					<li>重要</li>
+					<li>Researcher App</li>
+					<li>#nosource</li>
+				</ul>
+				<h3 class="attachments">附件</h3>
+				<ul class="attachments">
+					<li id="item_87QQ5NFZ">Jin 等 - 2022 - Vibrationally resolved optical excitations of the .pdf					</li>
+					<li id="item_NXDUH2ZN">Jin 等 - 2022 - Vibrationally resolved optical excitations of the .pdf					</li>
+				</ul>
+			</li>
+
+		</ul>
+	
+</body></html>

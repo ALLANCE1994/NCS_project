@@ -3,5 +3,5 @@ vivado_path: "C:/Xilinx/Vivado/2020.2/bin"  # Windows示例
 # vivado_path: "/tools/Xilinx/Vivado/2020.2/bin"  # Linux示例
 project_part: "xc7z020clg400-2"
 default_language: "VHDL"
-knowledge_base_path: "./knowledge_base"
-vector_db_path: "./chroma_db"
+knowledge_base_path: "../01_knowledge_base"
+vector_db_path: "../01_knowledge_base/vector_db"
