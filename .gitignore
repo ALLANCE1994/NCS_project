@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 向量数据库（本地生成，不入库）
+01_knowledge_base/vector_db/
+
+# 上传的原始资料
+.uploads/
+
+# 临时文件
+*.tmp
+*.bak
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
