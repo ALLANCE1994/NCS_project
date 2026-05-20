@@ -1,4 +1,4 @@
-# GitHub同步指令模板
+﻿# GitHub同步指令模板
 
 > **文档编号**：NV-FPGA-GITHUB-SYNC-001
 > **版本**：V1.0
@@ -240,7 +240,7 @@ feat: YYYYMMDD 更新[知识库类型]知识库
 | 实验报告 | `04_docs/02_reports/` | `YYYYMMDD_名称_报告.md` |
 | 用户手册 | `04_docs/03_manuals/` | `YYYYMMDD_名称.md` |
 | 进度记录 | `04_docs/04_progress/` | `YYYYMMDD_进度记录.md` |
-| 流程规范 | `05_rules/` | 保留原文件名 |
+| 流程规范 | `.trae/rules/` | 保留原文件名 |
 | 项目记忆 | `07_project_memory/` | 保留原结构 |
 
 ---

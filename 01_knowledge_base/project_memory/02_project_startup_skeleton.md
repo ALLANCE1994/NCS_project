@@ -1,4 +1,4 @@
-# NV项目极简启动骨架
+﻿# NV项目极简启动骨架
 
 > **用途**：`启动NV项目` 口令的标准输出（轻量化版本）
 
@@ -52,4 +52,4 @@
 
 ---
 
-> 完整规则详情见：`01_01_knowledge_base/05_rules/02_rule_layer_management.md`
+> 完整规则详情见：`.trae/rules/P0_01_rule_layer_management.md`

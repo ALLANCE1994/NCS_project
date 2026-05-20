@@ -2,101 +2,205 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue May 19 18:38:04 2026
-# Process ID: 37780
+# Start of session at: Wed May 20 11:03:16 2026
+# Process ID: 30272
 # Current directory: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1
 # Command line: vivado.exe -log top_odmr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_odmr.tcl
 # Log file: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1/top_odmr.vds
 # Journal file: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top_odmr.tcl -notrace
-Command: synth_design -top top_odmr -part xc7z020clg400-2
+Command: synth_design -top top_odmr -part xc7z020clg400-2 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 28144
+INFO: [Synth 8-7075] Helper process launched with PID 30524
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1148.684 ; gain = 7.930
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1148.590 ; gain = 7.789
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_odmr' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:98]
-INFO: [Synth 8-256] done synthesizing module 'top_odmr' (1#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'top_odmr' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:94]
+	Parameter FEATURE_TOP_ODMR bound to: 1'b1 
+INFO: [Synth 8-226] default block is never used [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:260]
+INFO: [Synth 8-638] synthesizing module 'dds_generator' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/dds_generator.vhd:63]
+	Parameter FEATURE_DDS_GENERATOR bound to: 1'b1 
+	Parameter PHASE_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 14 - type: integer 
+	Parameter ROM_ADDR_WIDTH bound to: 12 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dds_generator' (1#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/dds_generator.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'adc_interface' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/adc_interface.vhd:76]
+	Parameter FEATURE_ADC_INTERFACE bound to: 1'b1 
+	Parameter ADC_WIDTH bound to: 14 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+	Parameter FIFO_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'adc_interface' (2#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/adc_interface.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'cordic_lia' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/cordic_lia.vhd:82]
+	Parameter FEATURE_CORDIC_LIA bound to: 1'b1 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ITERATIONS bound to: 12 - type: integer 
+	Parameter INTERNAL_WIDTH bound to: 20 - type: integer 
+	Parameter PHASE_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cordic_lia' (3#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/cordic_lia.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'iir_lowpass' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/iir_lowpass.vhd:73]
+	Parameter FEATURE_IIR_LOWPASS bound to: 1'b1 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter COEFF_WIDTH bound to: 16 - type: integer 
+	Parameter ACC_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'iir_lowpass' (4#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/iir_lowpass.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'scan_controller' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/scan_controller.vhd:51]
+	Parameter FEATURE_SCAN_CONTROLLER bound to: 1'b1 
+	Parameter FREQ_WIDTH bound to: 32 - type: integer 
+	Parameter DWELL_WIDTH bound to: 16 - type: integer 
+	Parameter POINT_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'scan_controller' (5#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/scan_controller.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'top_odmr' (6#1) [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:94]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1200.844 ; gain = 60.090
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1258.848 ; gain = 118.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1200.844 ; gain = 60.090
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1258.848 ; gain = 118.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1200.844 ; gain = 60.090
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1258.848 ; gain = 118.047
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1200.844 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1258.848 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc]
-CRITICAL WARNING: [Netlist 29-177] Cannot set property 'BITSTREAM.CONFIG.CONFIGRATE' because the property does not exist. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc:133]
-Resolution: Create this property using create_property command before setting it.
-CRITICAL WARNING: [Netlist 29-177] Cannot set property 'BITSTREAM.CONFIG.SPI_BUSWIDTH' because the property does not exist. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc:134]
-Resolution: Create this property using create_property command before setting it.
-Finished Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_odmr_propImpl.xdc].
+Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sys_clk_50m'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sys_clk_50m'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sys_rst_n'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sys_rst_n'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_odmr_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_odmr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/02_timing.xdc]
-Finished Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/02_timing.xdc]
-Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/03_config.xdc]
-CRITICAL WARNING: [Netlist 29-177] Cannot set property 'BITSTREAM.CONFIG.CONFIGRATE' because the property does not exist. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/03_config.xdc:19]
-Resolution: Create this property using create_property command before setting it.
-CRITICAL WARNING: [Netlist 29-177] Cannot set property 'BITSTREAM.CONFIG.SPI_BUSWIDTH' because the property does not exist. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/03_config.xdc:22]
-Resolution: Create this property using create_property command before setting it.
-Finished Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/03_config.xdc]
+Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sys_clk_50m'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:15]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports sys_clk_50m]'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:15]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'sys_clk_50m'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:22]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks sys_clk_50m]'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:22]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:22]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-5201] set_clock_groups: cannot set the clock group when only one non-empty group remains. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'sys_rst_n'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:30]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_ports sys_rst_n]'. [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc:30]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc]
+Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/03_config.xdc]
+Finished Parsing XDC File [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/03_config.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1315.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1356.730 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1315.734 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1356.730 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.734 ; gain = 174.980
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1356.730 ; gain = 215.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.734 ; gain = 174.980
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1356.730 ; gain = 215.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.734 ; gain = 174.980
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1356.730 ; gain = 215.930
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'reg_status_reg' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:299]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'cordic_lia'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'scan_controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                            00001 |                              000
+                mult_sin |                            00010 |                              001
+                mult_cos |                            00100 |                              010
+             cordic_iter |                            01000 |                              011
+                  output |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'cordic_lia'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                           000001 |                              000
+             calc_points |                           000010 |                              001
+                set_freq |                           000100 |                              010
+              dwell_wait |                           001000 |                              011
+              check_next |                           010000 |                              100
+                    done |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'scan_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.734 ; gain = 174.980
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.730 ; gain = 215.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   25 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 2     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 3     
+	   2 Input   20 Bit       Adders := 2     
+	   3 Input   20 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 4     
+	   3 Input    4 Bit       Adders := 2     
++---XORs : 
+	   2 Input      4 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 3     
 +---Registers : 
-	               32 Bit    Registers := 6     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	               32 Bit    Registers := 19    
+	               31 Bit    Registers := 2     
+	               20 Bit    Registers := 2     
+	               16 Bit    Registers := 8     
+	               14 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                1 Bit    Registers := 15    
++---Multipliers : 
+	              16x32  Multipliers := 5     
++---RAMs : 
+	              256 Bit	(16 X 16 bit)          RAMs := 1     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 5     
-	   6 Input    1 Bit        Muxes := 5     
+	   4 Input   32 Bit        Muxes := 3     
+	   2 Input   20 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 7     
+	   3 Input   16 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 7     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 17    
+	   7 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 2     
+	  11 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -112,26 +216,121 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+DSP Report: Generating DSP ARG0, operation Mode is: A*B.
+DSP Report: operator ARG0 is absorbed into DSP ARG0.
+DSP Report: Generating DSP ARG0, operation Mode is: A*B.
+DSP Report: operator ARG0 is absorbed into DSP ARG0.
+DSP Report: Generating DSP ARG0, operation Mode is: A*(B:0x4db9).
+DSP Report: operator ARG0 is absorbed into DSP ARG0.
+DSP Report: Generating DSP mult_a1, operation Mode is: A*B.
+DSP Report: operator mult_a1 is absorbed into DSP mult_a1.
+DSP Report: operator mult_a1 is absorbed into DSP mult_a1.
+DSP Report: Generating DSP mult_a1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_a1 is absorbed into DSP mult_a1.
+DSP Report: operator mult_a1 is absorbed into DSP mult_a1.
+DSP Report: Generating DSP mult_a2, operation Mode is: A*B.
+DSP Report: operator mult_a2 is absorbed into DSP mult_a2.
+DSP Report: operator mult_a2 is absorbed into DSP mult_a2.
+DSP Report: Generating DSP mult_a2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_a2 is absorbed into DSP mult_a2.
+DSP Report: operator mult_a2 is absorbed into DSP mult_a2.
+DSP Report: Generating DSP mult_b1, operation Mode is: A*B.
+DSP Report: operator mult_b1 is absorbed into DSP mult_b1.
+DSP Report: operator mult_b1 is absorbed into DSP mult_b1.
+DSP Report: Generating DSP mult_b1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_b1 is absorbed into DSP mult_b1.
+DSP Report: operator mult_b1 is absorbed into DSP mult_b1.
+DSP Report: Generating DSP mult_b2, operation Mode is: A*B.
+DSP Report: operator mult_b2 is absorbed into DSP mult_b2.
+DSP Report: operator mult_b2 is absorbed into DSP mult_b2.
+DSP Report: Generating DSP mult_b2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_b2 is absorbed into DSP mult_b2.
+DSP Report: operator mult_b2 is absorbed into DSP mult_b2.
+DSP Report: Generating DSP mult_b0, operation Mode is: A*B.
+DSP Report: operator mult_b0 is absorbed into DSP mult_b0.
+DSP Report: operator mult_b0 is absorbed into DSP mult_b0.
+DSP Report: Generating DSP mult_b0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_b0 is absorbed into DSP mult_b0.
+DSP Report: operator mult_b0 is absorbed into DSP mult_b0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.734 ; gain = 174.980
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1389.109 ; gain = 248.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++--------------+------------+---------------+----------------+
+|Module Name   | RTL Object | Depth x Width | Implemented As | 
++--------------+------------+---------------+----------------+
+|dds_generator | SIN_ROM[0] | 4096x14       | LUT            | 
+|dds_generator | SIN_ROM[0] | 4096x14       | LUT            | 
++--------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++-------------------+--------------+-----------+----------------------+-------------+
+|Module Name        | RTL Object   | Inference | Size (Depth x Width) | Primitives  | 
++-------------------+--------------+-----------+----------------------+-------------+
+|inst_adc_interface | fifo_mem_reg | Implied   | 16 x 14              | RAM32M x 3	 | 
++-------------------+--------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|cordic_lia  | A*B            | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|cordic_lia  | A*B            | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|cordic_lia  | A*(B:0x4db9)   | 20     | 16     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | (PCIN>>17)+A*B | 16     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | (PCIN>>17)+A*B | 16     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | (PCIN>>17)+A*B | 16     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | (PCIN>>17)+A*B | 16     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|iir_lowpass | (PCIN>>17)+A*B | 16     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1315.734 ; gain = 174.980
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1389.109 ; gain = 248.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1322.598 ; gain = 181.844
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1389.109 ; gain = 248.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++-------------------+--------------+-----------+----------------------+-------------+
+|Module Name        | RTL Object   | Inference | Size (Depth x Width) | Primitives  | 
++-------------------+--------------+-----------+----------------------+-------------+
+|inst_adc_interface | fifo_mem_reg | Implied   | 16 x 14              | RAM32M x 3	 | 
++-------------------+--------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1323.398 ; gain = 182.645
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1403.023 ; gain = 262.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -149,37 +348,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -192,43 +391,49 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    13|
-|3     |LUT1   |     3|
-|4     |LUT2   |     4|
-|5     |LUT3   |     4|
-|6     |LUT4   |     6|
-|7     |LUT5   |     6|
-|8     |LUT6   |    76|
-|9     |FDCE   |   221|
-|10    |FDPE   |     1|
-|11    |IBUF   |   103|
-|12    |OBUF   |    60|
-+------+-------+------+
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     2|
+|2     |CARRY4  |   118|
+|3     |DSP48E1 |    13|
+|5     |LUT1    |    23|
+|6     |LUT2    |   297|
+|7     |LUT3    |   178|
+|8     |LUT4    |   263|
+|9     |LUT5    |   193|
+|10    |LUT6    |   825|
+|11    |MUXF7   |   255|
+|12    |MUXF8   |   110|
+|13    |RAM32M  |     3|
+|14    |FDCE    |   570|
+|15    |FDPE    |     3|
+|16    |FDRE    |   325|
+|17    |IBUF    |    63|
+|18    |OBUF    |    62|
++------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1331.000 ; gain = 75.355
-Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1331.000 ; gain = 190.246
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1416.879 ; gain = 178.195
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1416.879 ; gain = 276.078
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1343.012 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1430.363 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 499 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1347.785 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1433.820 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-17 Infos, 1 Warnings, 4 Critical Warnings and 0 Errors encountered.
+33 Infos, 7 Warnings, 9 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1347.785 ; gain = 207.031
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1433.820 ; gain = 293.020
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1/top_odmr.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_odmr_utilization_synth.rpt -pb top_odmr_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 19 18:38:21 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed May 20 11:03:46 2026...

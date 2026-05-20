@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed May 20 10:51:48 2026
+# Process ID: 2540
+# Current directory: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1
+# Command line: vivado.exe -log top_odmr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_odmr.tcl
+# Log file: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1/top_odmr.vds
+# Journal file: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_odmr.tcl -notrace
+Command: synth_design -top top_odmr -part xc7z020clg400-2 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15480
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1146.422 ; gain = 5.816
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-1779] cannot read from 'out' object s_axi_awready ; use 'buffer' or 'inout' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:192]
+ERROR: [Synth 8-1779] cannot read from 'out' object s_axi_wready ; use 'buffer' or 'inout' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:193]
+ERROR: [Synth 8-1779] cannot read from 'out' object s_axi_wready ; use 'buffer' or 'inout' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:202]
+ERROR: [Synth 8-1779] cannot read from 'out' object s_axi_awready ; use 'buffer' or 'inout' [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:216]
+ERROR: [Synth 8-1031] scan_total_pts is not declared [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:285]
+INFO: [Synth 8-2810] unit rtl ignored due to previous errors [C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd:94]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1195.750 ; gain = 55.145
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+7 Infos, 0 Warnings, 0 Critical Warnings and 6 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Wed May 20 10:51:56 2026...
