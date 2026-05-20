@@ -5,39 +5,42 @@
 # 【负责智能体】@H 硬件工程师
 # 【所属项目】NV色心实验系统（NCS_project）
 # 【目标平台】正点原子领航者ZYNQ7020（XC7Z020CLG400-2）
-# 【开发阶段】M3.0 顶层模块框架
+# 【开发阶段】M4.0 PS系统集成
+# 【M4变更说明】
+#   - 移除 sys_clk_50m / sys_rst_n 引脚约束（M4时钟/复位由PS7 FCLK提供）
+#   - 保留所有PL端外设接口引脚约束不变
 # 【修复记录】Bug#007 - 修正引脚分配，使用正确的HR Bank引脚
 # ============================================================================
 
 # ============================================================================
-# 1. 系统时钟与复位 - Bank 34
+# 1. PL端外设接口 - Bank 35
 # ============================================================================
 
-# 50MHz系统时钟（来自板载晶振）- Bank 34 MRCC
-set_property PACKAGE_PIN U18 [get_ports sys_clk_50m]
-set_property IOSTANDARD LVCMOS33 [get_ports sys_clk_50m]
-
-# 系统复位（低电平有效）- Bank 35
-set_property PACKAGE_PIN J15 [get_ports sys_rst_n]
-set_property IOSTANDARD LVCMOS33 [get_ports sys_rst_n]
-
-# ============================================================================
-# 2. PL端外设接口 - Bank 35
-# ============================================================================
-
-# LED指示（2个LED）
+# LED指示（4个LED）
 set_property PACKAGE_PIN M14 [get_ports {led[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led[0]}]
 
 set_property PACKAGE_PIN M15 [get_ports {led[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led[1]}]
 
-# 按键输入（2个按键）
+set_property PACKAGE_PIN N15 [get_ports {led[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[2]}]
+
+set_property PACKAGE_PIN N16 [get_ports {led[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[3]}]
+
+# 按键输入（4个按键）
 set_property PACKAGE_PIN K18 [get_ports {key[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {key[0]}]
 
 set_property PACKAGE_PIN P16 [get_ports {key[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {key[1]}]
+
+set_property PACKAGE_PIN J16 [get_ports {key[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {key[2]}]
+
+set_property PACKAGE_PIN K16 [get_ports {key[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {key[3]}]
 
 # ============================================================================
 # 3. DDS信号发生器接口（M3.1子模块）- Bank 34
@@ -81,7 +84,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports dds_valid]
 set_property PACKAGE_PIN U19 [get_ports adc_clk_in]
 set_property IOSTANDARD LVCMOS33 [get_ports adc_clk_in]
 
-# ADC数据输入（16位）- Bank 34 HR引脚
+# ADC数据输入（14位）- Bank 34 HR引脚
 set_property PACKAGE_PIN W14 [get_ports {adc_data_in[0]}]
 set_property PACKAGE_PIN Y14 [get_ports {adc_data_in[1]}]
 set_property PACKAGE_PIN Y16 [get_ports {adc_data_in[2]}]
@@ -96,8 +99,6 @@ set_property PACKAGE_PIN P14 [get_ports {adc_data_in[10]}]
 set_property PACKAGE_PIN R14 [get_ports {adc_data_in[11]}]
 set_property PACKAGE_PIN T11 [get_ports {adc_data_in[12]}]
 set_property PACKAGE_PIN T10 [get_ports {adc_data_in[13]}]
-set_property PACKAGE_PIN T12 [get_ports {adc_data_in[14]}]
-set_property PACKAGE_PIN U12 [get_ports {adc_data_in[15]}]
 
 set_property IOSTANDARD LVCMOS33 [get_ports {adc_data_in[*]}]
 

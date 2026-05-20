@@ -1,202 +1,127 @@
 # ============================================================================
-# Vivado TCL脚本 - 创建NV ODMR实验系统工程
+# Vivado TCL脚本 - 创建NV ODMR实验系统工程（M4.0 PS集成版）
 # ============================================================================
-# 功能：自动化创建Vivado工程，添加源文件和约束，运行综合实现
-# 使用：vivado -mode batch -source create_project.tcl
+# 功能：创建Vivado工程，添加所有VHDL源文件和约束文件
+# 使用：在Vivado TCL Console中执行: source create_project.tcl
+# 注意：M4版不自动运行综合，综合由 master_build_m4.tcl 统一调度
 # ============================================================================
-# 版本：v1.1
-# 日期：2026-05-19
-# 所属阶段：M3.0
+# 版本：v2.0 (M4)
+# 日期：2026-05-20
+# 所属阶段：M4.0 PS系统集成
 # 负责人：@H 硬件工程师
-# 修复记录：
-#   Bug#001 - 将set_property移到工程创建后
-#   Bug#002 - 删除不支持的set_property属性
-#   Bug#003 - 使用绝对路径避免glob匹配失败
-#   Bug#004 - 创建缺失的约束文件目录和文件
-#   Bug#005 - 创建reports目录
-#   Bug#006 - project_dir使用绝对路径
-#   Bug#007 - 修正引脚分配，使用正确的HR Bank引脚
+# 变更记录：
+#   v1.1 (M3) - 初始版本，纯PL综合实现
+#   v2.0 (M4) - 添加所有子模块VHDL，不设顶层（顶层由BD Wrapper担任）
+#               不自动运行综合，由master脚本调度
 # ============================================================================
 
 # ============================================================================
 # 1. 工程基础配置
 # ============================================================================
 
-# 工程名称
 set project_name "odmr_zynq7020"
+set project_dir  "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020"
+set part_name    "xc7z020clg400-2"
 
-# 工程路径（使用绝对路径）
-set project_dir "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020"
-
-# 目标器件
-set part_name "xc7z020clg400-2"
+# 源文件目录
+set src_dir       "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules"
+set constraint_dir "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints"
+set scripts_dir   "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/scripts"
 
 # ============================================================================
 # 2. 创建工程
 # ============================================================================
 
-# 创建工程（如果已存在则打开）
+# 如果已存在则删除重建（M4需要干净的工程）
 if {[file exists $project_dir/$project_name.xpr]} {
-    puts "INFO: Project exists, opening..."
-    open_project $project_dir/$project_name.xpr
-} else {
-    puts "INFO: Creating new project..."
-    create_project $project_name $project_dir -part $part_name -force
+    puts "INFO: 删除旧工程..."
+    close_project -quiet
+    file delete -force $project_dir/$project_name.cache
+    file delete -force $project_dir/$project_name.gen
+    file delete -force $project_dir/$project_name.hw
+    file delete -force $project_dir/$project_name.ip_user_files
+    file delete -force $project_dir/$project_name.runs
+    file delete -force $project_dir/$project_name.srcs
+    file delete -force $project_dir/$project_name.xpr
+    file delete -force $project_dir/vivado.jou
+    file delete -force $project_dir/vivado.log
 }
 
-# ============================================================================
-# 3. 设置设计源文件目录
-# ============================================================================
-
-# 使用绝对路径避免相对路径问题
-set src_dir "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules"
-set constraint_dir "C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints"
+puts "INFO: 创建新工程..."
+create_project $project_name $project_dir -part $part_name -force
 
 # ============================================================================
-# 4. 添加源文件
+# 3. 设置目标语言为VHDL
 # ============================================================================
 
-puts "INFO: Adding source files..."
+set_property target_language VHDL [current_project]
 
-# 添加顶层模块
-add_files -norecurse [glob $src_dir/top_odmr.vhd]
+# ============================================================================
+# 4. 添加所有VHDL源文件（子模块 + 顶层）
+# ============================================================================
 
-# 设置顶层模块
-set_property top top_odmr [current_fileset]
+puts "INFO: 添加VHDL源文件..."
+
+# 子模块（按依赖顺序添加）
+add_files -norecurse [list \
+    $src_dir/dds_generator.vhd \
+    $src_dir/adc_interface.vhd \
+    $src_dir/cordic_lia.vhd \
+    $src_dir/iir_lowpass.vhd \
+    $src_dir/scan_controller.vhd \
+]
+
+# 顶层模块（M4版，含AXI-Lite接口）
+add_files -norecurse $src_dir/top_odmr.vhd
+
+# 更新编译顺序
+update_compile_order -fileset sources_1
+
+puts "INFO: VHDL源文件添加完成（6个模块）"
 
 # ============================================================================
 # 5. 添加约束文件
 # ============================================================================
 
-puts "INFO: Adding constraint files..."
+puts "INFO: 添加约束文件..."
 
-# 添加引脚约束
-add_files -fileset constrs_1 -norecurse $constraint_dir/01_pins.xdc
+add_files -fileset constrs_1 -norecurse [list \
+    $constraint_dir/01_pins.xdc \
+    $constraint_dir/02_timing.xdc \
+    $constraint_dir/03_config.xdc \
+]
 
-# 添加时序约束
-add_files -fileset constrs_1 -norecurse $constraint_dir/02_timing.xdc
-
-# 添加配置约束
-add_files -fileset constrs_1 -norecurse $constraint_dir/03_config.xdc
-
-# ============================================================================
-# 6. 运行综合
-# ============================================================================
-
-puts "INFO: Running synthesis..."
-
-# 更新设计
-update_compile_order -fileset sources_1
-
-# 运行综合
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-
-# 检查综合结果
-if {[get_property PROGRESS [get_runs synth_1]] != "100%"} {
-    puts "ERROR: Synthesis failed!"
-    exit 1
-}
-
-set synth_status [get_property STATUS [get_runs synth_1]]
-puts "INFO: Synthesis status: $synth_status"
+puts "INFO: 约束文件添加完成（3个XDC）"
 
 # ============================================================================
-# 7. 报告综合结果
+# 6. 创建reports目录
 # ============================================================================
 
-puts "INFO: Generating synthesis report..."
-
-# 打开综合后的设计
-open_run synth_1
-
-# 报告资源利用率
-report_utilization -file $project_dir/reports/utilization_synth.rpt
-
-# 报告时序
-report_timing_summary -file $project_dir/reports/timing_synth.rpt
+file mkdir $project_dir/reports
 
 # ============================================================================
-# 8. 运行实现
-# ============================================================================
-
-puts "INFO: Running implementation..."
-
-# 运行实现
-reset_run impl_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-
-# 检查实现结果
-if {[get_property PROGRESS [get_runs impl_1]] != "100%"} {
-    puts "ERROR: Implementation failed!"
-    exit 1
-}
-
-set impl_status [get_property STATUS [get_runs impl_1]]
-puts "INFO: Implementation status: $impl_status"
-
-# ============================================================================
-# 9. 报告实现结果
-# ============================================================================
-
-puts "INFO: Generating implementation report..."
-
-# 打开实现后的设计
-open_run impl_1
-
-# 报告资源利用率
-report_utilization -file $project_dir/reports/utilization_impl.rpt
-
-# 报告时序
-report_timing_summary -file $project_dir/reports/timing_impl.rpt
-
-# 报告DRC
-report_drc -file $project_dir/reports/drc.rpt
-
-# 报告功耗
-report_power -file $project_dir/reports/power.rpt
-
-# ============================================================================
-# 10. 生成比特流
-# ============================================================================
-
-puts "INFO: Generating bitstream..."
-
-# 启动比特流生成
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-
-# 检查比特流生成结果
-if {[get_property PROGRESS [get_runs impl_1]] != "100%"} {
-    puts "ERROR: Bitstream generation failed!"
-    exit 1
-}
-
-puts "INFO: Bitstream generated successfully!"
-
-# ============================================================================
-# 11. 输出总结
+# 7. 完成提示
 # ============================================================================
 
 puts ""
 puts "========================================"
-puts "  M3.0 Vivado工程完成报告"
+puts "  M4.0 工程创建完成"
 puts "========================================"
-puts ""
 puts "工程路径: $project_dir/$project_name.xpr"
-puts "比特流文件: $project_dir/$project_name.runs/impl_1/top_odmr.bit"
 puts ""
-puts "报告文件:"
-puts "  - reports/utilization_synth.rpt  (综合资源)"
-puts "  - reports/timing_synth.rpt       (综合时序)"
-puts "  - reports/utilization_impl.rpt   (实现资源)"
-puts "  - reports/timing_impl.rpt        (实现时序)"
-puts "  - reports/drc.rpt                (DRC检查)"
-puts "  - reports/power.rpt              (功耗报告)"
+puts "已添加VHDL模块:"
+puts "  - dds_generator.vhd"
+puts "  - adc_interface.vhd"
+puts "  - cordic_lia.vhd"
+puts "  - iir_lowpass.vhd"
+puts "  - scan_controller.vhd"
+puts "  - top_odmr.vhd (M4 AXI-Lite版)"
 puts ""
+puts "已添加约束文件:"
+puts "  - 01_pins.xdc (M4版，已移除sys_clk/sys_rst)"
+puts "  - 02_timing.xdc (M4版，已移除sys_clk定义)"
+puts "  - 03_config.xdc"
+puts ""
+puts "下一步: 在Vivado TCL Console中执行:"
+puts "  source $scripts_dir/01b_create_block_design.tcl"
 puts "========================================"
-
-# 关闭工程（可选）
-# close_project
