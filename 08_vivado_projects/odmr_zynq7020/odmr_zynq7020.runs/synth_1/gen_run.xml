@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1779246194">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1779187083">
   <File Type="PA-TCL" Name="top_odmr.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_odmr_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_odmr_reports.tcl"/>
@@ -11,47 +11,9 @@
   <File Type="VDS-TIMING-PB" Name="top_odmr_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../03_code/01_vhdl_modules/adc_interface.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../03_code/01_vhdl_modules/cordic_lia.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../03_code/01_vhdl_modules/dds_generator.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../03_code/01_vhdl_modules/iir_lowpass.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../03_code/01_vhdl_modules/scan_controller.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../03_code/01_vhdl_modules/top_odmr.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/odmr_block_design/odmr_block_design.bd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -62,19 +24,19 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../03_code/02_constraints/01_pins.xdc">
+    <File Path="$PPRDIR/constraints/01_pins.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../03_code/02_constraints/02_timing.xdc">
+    <File Path="$PPRDIR/constraints/02_timing.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../03_code/02_constraints/03_config.xdc">
+    <File Path="$PPRDIR/constraints/03_config.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -91,14 +53,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2020"/>
-    <Step Id="synth_design">
-      <Option Id="Directive">7</Option>
-      <Option Id="KeepEquivalentRegisters">1</Option>
-      <Option Id="ResourceSharing">2</Option>
-      <Option Id="FsmExtraction">1</Option>
-      <Option Id="NoCombineLuts">1</Option>
-      <Option Id="ShregMinSize">5</Option>
-    </Step>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

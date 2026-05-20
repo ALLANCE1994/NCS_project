@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed May 20 11:04:43 2026
-# Process ID: 19568
+# Start of session at: Tue May 19 18:38:31 2026
+# Process ID: 28188
 # Current directory: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/impl_1
 # Command line: vivado.exe -log top_odmr.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_odmr.tcl -notrace
 # Log file: C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/impl_1/top_odmr.vdi
@@ -14,10 +14,10 @@ Command: open_checkpoint C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_p
 
 Starting open_checkpoint Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1141.309 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1140.801 ; gain = 0.000
 INFO: [Device 21-403] Loading part xc7z020clg400-2
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1141.309 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 499 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1140.801 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2020.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -28,18 +28,16 @@ INFO: [Project 1-853] Binary constraint restore complete.
 Reading XDEF placement.
 Reading placer database...
 Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1502.934 ; gain = 0.000
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1593.223 ; gain = 7.828
 Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1502.934 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1502.934 ; gain = 0.000
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1593.223 ; gain = 7.828
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1593.223 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
-  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+No Unisim elements were transformed.
 
 INFO: [Project 1-604] Checkpoint was created with Vivado v2020.2 (64-bit) build 3064766
-open_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1502.934 ; gain = 361.625
-Command: opt_design -directive Explore
-INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+open_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1593.223 ; gain = 452.422
+Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 Running DRC as a precondition to command opt_design
@@ -49,54 +47,53 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.359 . Memory (MB): peak = 1522.977 ; gain = 20.043
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.394 . Memory (MB): peak = 1618.246 ; gain = 23.996
 
 Starting Cache Timing Information Task
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 11e11e814
+Ending Cache Timing Information Task | Checksum: 2592582cb
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1604.895 ; gain = 81.918
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1618.246 ; gain = 0.000
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 11e11e814
+Phase 1 Retarget | Checksum: 2592582cb
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 141362332
+Phase 2 Constant propagation | Checksum: 2592582cb
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 1804267c0
+Phase 3 Sweep | Checksum: 1e6dba95b
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1804.121 ; gain = 0.000
-INFO: [Opt 31-389] Phase Sweep created 1 cells and removed 0 cells
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1805.680 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 1804267c0
+Phase 4 BUFG optimization | Checksum: 1e6dba95b
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.115 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 1804267c0
+Phase 5 Shift Register Optimization | Checksum: 1e6dba95b
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 1804267c0
+Phase 6 Post Processing Netlist | Checksum: 1e6dba95b
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -107,7 +104,7 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Retarget                     |               0  |               0  |                                              0  |
 |  Constant propagation         |               0  |               0  |                                              0  |
-|  Sweep                        |               1  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
 |  BUFG optimization            |               0  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
 |  Post Processing Netlist      |               0  |               0  |                                              0  |
@@ -117,36 +114,36 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1804.121 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 1648c7d51
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1805.680 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 2529c7bea
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1805.680 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: 1648c7d51
+Ending Power Optimization Task | Checksum: 2529c7bea
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1805.680 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 1648c7d51
+Ending Final Cleanup Task | Checksum: 2529c7bea
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1805.680 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1804.121 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 1648c7d51
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1805.680 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 2529c7bea
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-29 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1804.121 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1805.680 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/impl_1/top_odmr_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file top_odmr_drc_opted.rpt -pb top_odmr_drc_opted.pb -rpx top_odmr_drc_opted.rpx
 Command: report_drc -file top_odmr_drc_opted.rpt -pb top_odmr_drc_opted.pb -rpx top_odmr_drc_opted.rpx
@@ -157,7 +154,7 @@ INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.runs/impl_1/top_odmr_drc_opted.rpt.
 report_drc completed successfully
-Command: place_design -directive Explore
+Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [DRC 23-27] Running DRC with 2 threads
@@ -169,22 +166,85 @@ INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 Starting Placer Task
-INFO: [Place 46-5] The placer was invoked with the 'Explore' directive.
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1854.285 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14ef332ea
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1852.809 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1636a5a42
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1854.285 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1854.285 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1852.809 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1852.809 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (44) is greater than number of available sites (25).
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (100) is greater than number of available sites (0).
 The following are banks with available pins: 
- IO Group: 1 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 2  has only 25 sites available on device, but needs 44 sites.
+ IO Group: 2 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 0 sites available on device, but needs 100 sites.
+	Term: s_axi_araddr[0]
+	Term: s_axi_araddr[1]
+	Term: s_axi_araddr[2]
+	Term: s_axi_araddr[3]
+	Term: s_axi_araddr[4]
+	Term: s_axi_araddr[5]
+	Term: s_axi_araddr[6]
+	Term: s_axi_araddr[7]
+	Term: s_axi_araddr[8]
+	Term: s_axi_araddr[9]
+	Term: s_axi_araddr[10]
+	Term: s_axi_araddr[11]
+	Term: s_axi_araddr[12]
+	Term: s_axi_araddr[13]
+	Term: s_axi_araddr[14]
+	Term: s_axi_araddr[15]
+	Term: s_axi_araddr[16]
+	Term: s_axi_araddr[17]
+	Term: s_axi_araddr[18]
+	Term: s_axi_araddr[19]
+	Term: s_axi_araddr[20]
+	Term: s_axi_araddr[21]
+	Term: s_axi_araddr[22]
+	Term: s_axi_araddr[23]
+	Term: s_axi_araddr[24]
+	Term: s_axi_araddr[25]
+	Term: s_axi_araddr[26]
+	Term: s_axi_araddr[27]
+	Term: s_axi_araddr[28]
+	Term: s_axi_araddr[29]
+	Term: s_axi_araddr[30]
+	Term: s_axi_araddr[31]
+	Term: s_axi_awaddr[0]
+	Term: s_axi_awaddr[1]
+	Term: s_axi_awaddr[2]
+	Term: s_axi_awaddr[3]
+	Term: s_axi_awaddr[4]
+	Term: s_axi_awaddr[5]
+	Term: s_axi_awaddr[6]
+	Term: s_axi_awaddr[7]
+	Term: s_axi_awaddr[8]
+	Term: s_axi_awaddr[9]
+	Term: s_axi_awaddr[10]
+	Term: s_axi_awaddr[11]
+	Term: s_axi_awaddr[12]
+	Term: s_axi_awaddr[13]
+	Term: s_axi_awaddr[14]
+	Term: s_axi_awaddr[15]
+	Term: s_axi_awaddr[16]
+	Term: s_axi_awaddr[17]
+	Term: s_axi_awaddr[18]
+	Term: s_axi_awaddr[19]
+	Term: s_axi_awaddr[20]
+	Term: s_axi_awaddr[21]
+	Term: s_axi_awaddr[22]
+	Term: s_axi_awaddr[23]
+	Term: s_axi_awaddr[24]
+	Term: s_axi_awaddr[25]
+	Term: s_axi_awaddr[26]
+	Term: s_axi_awaddr[27]
+	Term: s_axi_awaddr[28]
+	Term: s_axi_awaddr[29]
+	Term: s_axi_awaddr[30]
+	Term: s_axi_awaddr[31]
 	Term: s_axi_wdata[0]
 	Term: s_axi_wdata[1]
 	Term: s_axi_wdata[2]
@@ -217,23 +277,79 @@ The following are banks with available pins:
 	Term: s_axi_wdata[29]
 	Term: s_axi_wdata[30]
 	Term: s_axi_wdata[31]
-	Term: s_axi_araddr[0]
-	Term: s_axi_araddr[1]
-	Term: s_axi_araddr[2]
-	Term: s_axi_araddr[3]
-	Term: s_axi_awaddr[0]
-	Term: s_axi_awaddr[1]
-	Term: s_axi_awaddr[2]
-	Term: s_axi_awaddr[3]
 	Term: s_axi_aresetn
 	Term: s_axi_arvalid
 	Term: s_axi_awvalid
 	Term: s_axi_wvalid
 
 
-ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (41) is greater than number of available sites (25).
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (41) is greater than number of available sites (0).
 The following are banks with available pins: 
- IO Group: 1 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 2  has only 25 sites available on device, but needs 44 sites.
+ IO Group: 2 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 0 sites available on device, but needs 100 sites.
+	Term: s_axi_araddr[0]
+	Term: s_axi_araddr[1]
+	Term: s_axi_araddr[2]
+	Term: s_axi_araddr[3]
+	Term: s_axi_araddr[4]
+	Term: s_axi_araddr[5]
+	Term: s_axi_araddr[6]
+	Term: s_axi_araddr[7]
+	Term: s_axi_araddr[8]
+	Term: s_axi_araddr[9]
+	Term: s_axi_araddr[10]
+	Term: s_axi_araddr[11]
+	Term: s_axi_araddr[12]
+	Term: s_axi_araddr[13]
+	Term: s_axi_araddr[14]
+	Term: s_axi_araddr[15]
+	Term: s_axi_araddr[16]
+	Term: s_axi_araddr[17]
+	Term: s_axi_araddr[18]
+	Term: s_axi_araddr[19]
+	Term: s_axi_araddr[20]
+	Term: s_axi_araddr[21]
+	Term: s_axi_araddr[22]
+	Term: s_axi_araddr[23]
+	Term: s_axi_araddr[24]
+	Term: s_axi_araddr[25]
+	Term: s_axi_araddr[26]
+	Term: s_axi_araddr[27]
+	Term: s_axi_araddr[28]
+	Term: s_axi_araddr[29]
+	Term: s_axi_araddr[30]
+	Term: s_axi_araddr[31]
+	Term: s_axi_awaddr[0]
+	Term: s_axi_awaddr[1]
+	Term: s_axi_awaddr[2]
+	Term: s_axi_awaddr[3]
+	Term: s_axi_awaddr[4]
+	Term: s_axi_awaddr[5]
+	Term: s_axi_awaddr[6]
+	Term: s_axi_awaddr[7]
+	Term: s_axi_awaddr[8]
+	Term: s_axi_awaddr[9]
+	Term: s_axi_awaddr[10]
+	Term: s_axi_awaddr[11]
+	Term: s_axi_awaddr[12]
+	Term: s_axi_awaddr[13]
+	Term: s_axi_awaddr[14]
+	Term: s_axi_awaddr[15]
+	Term: s_axi_awaddr[16]
+	Term: s_axi_awaddr[17]
+	Term: s_axi_awaddr[18]
+	Term: s_axi_awaddr[19]
+	Term: s_axi_awaddr[20]
+	Term: s_axi_awaddr[21]
+	Term: s_axi_awaddr[22]
+	Term: s_axi_awaddr[23]
+	Term: s_axi_awaddr[24]
+	Term: s_axi_awaddr[25]
+	Term: s_axi_awaddr[26]
+	Term: s_axi_awaddr[27]
+	Term: s_axi_awaddr[28]
+	Term: s_axi_awaddr[29]
+	Term: s_axi_awaddr[30]
+	Term: s_axi_awaddr[31]
 	Term: s_axi_wdata[0]
 	Term: s_axi_wdata[1]
 	Term: s_axi_wdata[2]
@@ -266,21 +382,13 @@ The following are banks with available pins:
 	Term: s_axi_wdata[29]
 	Term: s_axi_wdata[30]
 	Term: s_axi_wdata[31]
-	Term: s_axi_araddr[0]
-	Term: s_axi_araddr[1]
-	Term: s_axi_araddr[2]
-	Term: s_axi_araddr[3]
-	Term: s_axi_awaddr[0]
-	Term: s_axi_awaddr[1]
-	Term: s_axi_awaddr[2]
-	Term: s_axi_awaddr[3]
 	Term: s_axi_aresetn
 	Term: s_axi_arvalid
 	Term: s_axi_awvalid
 	Term: s_axi_wvalid
 
 
- IO Group: 2 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 2 Drv: 12  has only 25 sites available on device, but needs 41 sites.
+ IO Group: 3 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 0 sites available on device, but needs 41 sites.
 	Term: s_axi_rdata[0]
 	Term: s_axi_rdata[1]
 	Term: s_axi_rdata[2]
@@ -324,9 +432,73 @@ The following are banks with available pins:
 	Term: s_axi_wready
 
 
-ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (85) is greater than number of available sites (25).
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (145) is greater than number of available sites (87).
 The following are banks with available pins: 
- IO Group: 1 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 2  has only 25 sites available on device, but needs 44 sites.
+ IO Group: 2 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 0 sites available on device, but needs 100 sites.
+	Term: s_axi_araddr[0]
+	Term: s_axi_araddr[1]
+	Term: s_axi_araddr[2]
+	Term: s_axi_araddr[3]
+	Term: s_axi_araddr[4]
+	Term: s_axi_araddr[5]
+	Term: s_axi_araddr[6]
+	Term: s_axi_araddr[7]
+	Term: s_axi_araddr[8]
+	Term: s_axi_araddr[9]
+	Term: s_axi_araddr[10]
+	Term: s_axi_araddr[11]
+	Term: s_axi_araddr[12]
+	Term: s_axi_araddr[13]
+	Term: s_axi_araddr[14]
+	Term: s_axi_araddr[15]
+	Term: s_axi_araddr[16]
+	Term: s_axi_araddr[17]
+	Term: s_axi_araddr[18]
+	Term: s_axi_araddr[19]
+	Term: s_axi_araddr[20]
+	Term: s_axi_araddr[21]
+	Term: s_axi_araddr[22]
+	Term: s_axi_araddr[23]
+	Term: s_axi_araddr[24]
+	Term: s_axi_araddr[25]
+	Term: s_axi_araddr[26]
+	Term: s_axi_araddr[27]
+	Term: s_axi_araddr[28]
+	Term: s_axi_araddr[29]
+	Term: s_axi_araddr[30]
+	Term: s_axi_araddr[31]
+	Term: s_axi_awaddr[0]
+	Term: s_axi_awaddr[1]
+	Term: s_axi_awaddr[2]
+	Term: s_axi_awaddr[3]
+	Term: s_axi_awaddr[4]
+	Term: s_axi_awaddr[5]
+	Term: s_axi_awaddr[6]
+	Term: s_axi_awaddr[7]
+	Term: s_axi_awaddr[8]
+	Term: s_axi_awaddr[9]
+	Term: s_axi_awaddr[10]
+	Term: s_axi_awaddr[11]
+	Term: s_axi_awaddr[12]
+	Term: s_axi_awaddr[13]
+	Term: s_axi_awaddr[14]
+	Term: s_axi_awaddr[15]
+	Term: s_axi_awaddr[16]
+	Term: s_axi_awaddr[17]
+	Term: s_axi_awaddr[18]
+	Term: s_axi_awaddr[19]
+	Term: s_axi_awaddr[20]
+	Term: s_axi_awaddr[21]
+	Term: s_axi_awaddr[22]
+	Term: s_axi_awaddr[23]
+	Term: s_axi_awaddr[24]
+	Term: s_axi_awaddr[25]
+	Term: s_axi_awaddr[26]
+	Term: s_axi_awaddr[27]
+	Term: s_axi_awaddr[28]
+	Term: s_axi_awaddr[29]
+	Term: s_axi_awaddr[30]
+	Term: s_axi_awaddr[31]
 	Term: s_axi_wdata[0]
 	Term: s_axi_wdata[1]
 	Term: s_axi_wdata[2]
@@ -359,21 +531,13 @@ The following are banks with available pins:
 	Term: s_axi_wdata[29]
 	Term: s_axi_wdata[30]
 	Term: s_axi_wdata[31]
-	Term: s_axi_araddr[0]
-	Term: s_axi_araddr[1]
-	Term: s_axi_araddr[2]
-	Term: s_axi_araddr[3]
-	Term: s_axi_awaddr[0]
-	Term: s_axi_awaddr[1]
-	Term: s_axi_awaddr[2]
-	Term: s_axi_awaddr[3]
 	Term: s_axi_aresetn
 	Term: s_axi_arvalid
 	Term: s_axi_awvalid
 	Term: s_axi_wvalid
 
 
- IO Group: 2 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 2 Drv: 12  has only 25 sites available on device, but needs 41 sites.
+ IO Group: 3 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 0 sites available on device, but needs 41 sites.
 	Term: s_axi_rdata[0]
 	Term: s_axi_rdata[1]
 	Term: s_axi_rdata[2]
@@ -427,71 +591,51 @@ Below is the partial placement that can be analyzed to see if any constraint mod
 +----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
 |  0 |     0 |     0 |                                                                        |                                          |        |        |        |     |
 | 13 |    25 |     0 |                                                                        |                                          |        |        |        |     |
-| 34 |    50 |    35 | LVCMOS33(35)                                                           |                                          |        |  +3.30 |    YES |     |
-| 35 |    50 |     4 | LVCMOS33(4)                                                            |                                          |        |  +3.30 |    YES |     |
+| 34 |    50 |     5 | LVCMOS33(5)                                                            |                                          |        |  +3.30 |    YES |     |
+| 35 |    50 |    12 | LVCMOS33(12)                                                           |                                          |        |  +3.30 |    YES |     |
 +----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
-|    |   125 |    39 |                                                                        |                                          |        |        |        |     |
+|    |   125 |    17 |                                                                        |                                          |        |        |        |     |
 +----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
 
 IO Placement:
 +--------+----------------------+-----------------+----------------------+----------------------+----------------------+
 | BankId |             Terminal | Standard        | Site                 | Pin                  | Attributes           |
 +--------+----------------------+-----------------+----------------------+----------------------+----------------------+
-| 34     | adc_clk_in           | LVCMOS33        | IOB_X1Y86            | Y16                  |                      |
-|        | adc_data_in[0]       | LVCMOS33        | IOB_X1Y84            | W14                  |                      |
-|        | adc_data_in[10]      | LVCMOS33        | IOB_X1Y59            | R18                  |                      |
-|        | adc_data_in[11]      | LVCMOS33        | IOB_X1Y56            | W18                  |                      |
-|        | adc_data_in[12]      | LVCMOS33        | IOB_X1Y55            | W19                  |                      |
-|        | adc_data_in[13]      | LVCMOS33        | IOB_X1Y54            | N17                  |                      |
-|        | adc_data_in[1]       | LVCMOS33        | IOB_X1Y83            | Y14                  |                      |
-|        | adc_data_in[2]       | LVCMOS33        | IOB_X1Y68            | V20                  |                      |
-|        | adc_data_in[3]       | LVCMOS33        | IOB_X1Y67            | W20                  |                      |
-|        | adc_data_in[4]       | LVCMOS33        | IOB_X1Y66            | Y18                  |                      |
-|        | adc_data_in[5]       | LVCMOS33        | IOB_X1Y65            | Y19                  |                      |
-|        | adc_data_in[6]       | LVCMOS33        | IOB_X1Y64            | V16                  |                      |
-|        | adc_data_in[7]       | LVCMOS33        | IOB_X1Y63            | W16                  |                      |
-|        | adc_data_in[8]       | LVCMOS33        | IOB_X1Y62            | R16                  |                      |
-|        | adc_data_in[9]       | LVCMOS33        | IOB_X1Y60            | T17                  |                      |
-|        | adc_ovr              | LVCMOS33        | IOB_X1Y74            | N18                  |                      |
-|        | adc_valid            | LVCMOS33        | IOB_X1Y53            | P18                  |                      |
-|        | dds_clk_out          | LVCMOS33        | IOB_X1Y89            | T15                  |                      |
-|        | dds_data_out[0]      | LVCMOS33        | IOB_X1Y88            | P14                  |                      |
-|        | dds_data_out[10]     | LVCMOS33        | IOB_X1Y78            | U14                  |                      |
-|        | dds_data_out[11]     | LVCMOS33        | IOB_X1Y77            | U15                  |                      |
-|        | dds_data_out[12]     | LVCMOS33        | IOB_X1Y80            | V15                  |                      |
-|        | dds_data_out[13]     | LVCMOS33        | IOB_X1Y79            | W15                  |                      |
-|        | dds_data_out[1]      | LVCMOS33        | IOB_X1Y87            | R14                  | *                    |
-|        | dds_data_out[2]      | LVCMOS33        | IOB_X1Y98            | T11                  |                      |
-|        | dds_data_out[3]      | LVCMOS33        | IOB_X1Y97            | T10                  |                      |
-|        | dds_data_out[4]      | LVCMOS33        | IOB_X1Y96            | T12                  |                      |
-|        | dds_data_out[5]      | LVCMOS33        | IOB_X1Y95            | U12                  |                      |
-|        | dds_data_out[6]      | LVCMOS33        | IOB_X1Y92            | V12                  |                      |
-|        | dds_data_out[7]      | LVCMOS33        | IOB_X1Y91            | W13                  |                      |
-|        | dds_data_out[8]      | LVCMOS33        | IOB_X1Y93            | V13                  |                      |
-|        | dds_data_out[9]      | LVCMOS33        | IOB_X1Y90            | T14                  |                      |
-|        | dds_valid            | LVCMOS33        | IOB_X1Y85            | Y17                  |                      |
-|        | scan_sync            | LVCMOS33        | IOB_X1Y94            | U13                  |                      |
-|        | scan_trigger         | LVCMOS33        | IOB_X1Y75            | U19                  |                      |
+| 34     | dds_clk_out          | LVCMOS33        | IOB_X1Y82            | T16                  |                      |
+|        | dds_data_out[0]      | LVCMOS33        | IOB_X1Y61            | R17                  | *                    |
+|        | dds_data_out[2]      | LVCMOS33        | IOB_X1Y54            | N17                  |                      |
+|        | scan_trigger         | LVCMOS33        | IOB_X1Y98            | T11                  |                      |
+|        | sys_clk_50m          | LVCMOS33        | IOB_X1Y76            | U18                  |                      |
 +--------+----------------------+-----------------+----------------------+----------------------+----------------------+
-| 35     | led[0]               | LVCMOS33        | IOB_X1Y104           | M14                  |                      |
+| 35     | dds_data_out[11]     | LVCMOS33        | IOB_X1Y140           | E18                  |                      |
+|        | dds_data_out[12]     | LVCMOS33        | IOB_X1Y139           | E19                  |                      |
+|        | dds_data_out[13]     | LVCMOS33        | IOB_X1Y142           | D19                  |                      |
+|        | dds_data_out[3]      | LVCMOS33        | IOB_X1Y134           | M17                  |                      |
+|        | dds_data_out[4]      | LVCMOS33        | IOB_X1Y127           | L17                  |                      |
+|        | dds_data_out[5]      | LVCMOS33        | IOB_X1Y126           | K17                  |                      |
+|        | dds_data_out[7]      | LVCMOS33        | IOB_X1Y123           | H17                  |                      |
+|        | dds_data_out[8]      | LVCMOS33        | IOB_X1Y121           | H18                  |                      |
+|        | dds_data_out[9]      | LVCMOS33        | IOB_X1Y117           | G18                  |                      |
+|        | led[0]               | LVCMOS33        | IOB_X1Y104           | M14                  |                      |
 |        | led[1]               | LVCMOS33        | IOB_X1Y103           | M15                  |                      |
-|        | led[2]               | LVCMOS33        | IOB_X1Y102           | K16                  |                      |
-|        | led[3]               | LVCMOS33        | IOB_X1Y101           | J16                  |                      |
+|        | sys_rst_n            | LVCMOS33        | IOB_X1Y107           | N16                  |                      |
 +--------+----------------------+-----------------+----------------------+----------------------+----------------------+
 
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 136702122
+WARNING: [Place 30-87] Partially locked IO Bus is found. Following components of the IO Bus adc_data_in are not locked:  'adc_data_in[8]' 
+WARNING: [Place 30-87] Partially locked IO Bus is found. Following components of the IO Bus dds_data_out are not locked:  'dds_data_out[10]'  'dds_data_out[6]'  'dds_data_out[1]' 
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1b02b9caa
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 1854.285 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 136702122
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1852.809 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1b02b9caa
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.210 . Memory (MB): peak = 1854.285 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1852.809 ; gain = 0.000
 ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
 Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
-Ending Placer Task | Checksum: 136702122
+Ending Placer Task | Checksum: 1b02b9caa
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.211 . Memory (MB): peak = 1854.285 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1852.809 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-48 Infos, 0 Warnings, 0 Critical Warnings and 6 Errors encountered.
+45 Infos, 2 Warnings, 0 Critical Warnings and 6 Errors encountered.
 place_design failed
 ERROR: [Common 17-69] Command failed: Placer could not place all instances
-INFO: [Common 17-206] Exiting Vivado at Wed May 20 11:04:57 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue May 19 18:38:44 2026...

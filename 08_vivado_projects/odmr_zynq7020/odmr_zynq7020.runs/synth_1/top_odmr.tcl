@@ -80,19 +80,12 @@ set_param synth.vivado.isSynthRun true
 set_property webtalk.parent_dir C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.cache/wt [current_project]
 set_property parent.project_path C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language VHDL [current_project]
+set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/odmr_zynq7020.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib {
-  C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/adc_interface.vhd
-  C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/cordic_lia.vhd
-  C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/dds_generator.vhd
-  C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/iir_lowpass.vhd
-  C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/scan_controller.vhd
-  C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd
-}
+read_vhdl -library xil_defaultlib C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/01_vhdl_modules/top_odmr.vhd
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -102,20 +95,20 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc
-set_property used_in_implementation false [get_files C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/01_pins.xdc]
+read_xdc C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc
+set_property used_in_implementation false [get_files C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/01_pins.xdc]
 
-read_xdc C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc
-set_property used_in_implementation false [get_files C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/02_timing.xdc]
+read_xdc C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/02_timing.xdc
+set_property used_in_implementation false [get_files C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/02_timing.xdc]
 
-read_xdc C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/03_config.xdc
-set_property used_in_implementation false [get_files C:/Users/YXCOA/Desktop/lxb/NCS_project-main/03_code/02_constraints/03_config.xdc]
+read_xdc C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/03_config.xdc
+set_property used_in_implementation false [get_files C:/Users/YXCOA/Desktop/lxb/NCS_project-main/08_vivado_projects/odmr_zynq7020/constraints/03_config.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top_odmr -part xc7z020clg400-2 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+synth_design -top top_odmr -part xc7z020clg400-2
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

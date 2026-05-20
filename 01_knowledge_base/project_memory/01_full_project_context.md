@@ -1,4 +1,4 @@
-﻿# NV色心项目全套工程接续文案
+# NV色心项目全套工程接续文案
 
 > **文档编号**：NV-FPGA-MEMORY-001
 > **版本**：V1.0
@@ -22,7 +22,7 @@
 | **业务核心** | 金刚石NV色心量子精密测量 |
 | **智能体团队** | 10大智能体 |
 | **GitHub仓库** | https://github.com/ALLANCE1994/NCS_project.git |
-| **当前阶段** | M3.0完成，M3.1待开始 |
+| **当前阶段** | 基础框架搭建完成，等待专业PDF资料投喂 |
 
 ---
 
@@ -85,12 +85,12 @@ NCS_project/
 │   ├── 03_manuals/                       #   使用手册
 │   └── 04_progress/                      #   进度记录
 │
-├── .trae/rules/                             # 流程规范
-│   ├── P3_01_token_efficiency_rules.md    #   Token 节流规则
-│   ├── P0_01_rule_layer_management.md    #   规则分层管理（核心常驻+非核心自动启停）
-│   ├── P2_01_document_refinement_workflow.md # 双层文档提炼流程
-│   ├── P1_01_hallucination_prevention_rules.md # 防幻觉规则
-│   └── P0_08_small_steps_enforcement.md  #   小步快跑强制执行
+├── 05_rules/                             # 流程规范
+│   ├── 01_token_efficiency_rules.md      #   Token 节流规则
+│   ├── 02_rule_layer_management.md       #   核心常驻 + 非核心自动启停
+│   ├── 03_document_refinement_workflow.md#   双层文档提炼流程
+│   ├── 04_hallucination_prevention_rules.md # 防幻觉规则
+│   └── 05_project_operation_standards.md #   项目运营标准
 │
 ├── 06_experiment_data/                   # 实验数据（待建设）
 ├── 07_pynq_notebooks/                    # PYNQ Jupyter 笔记本（待建设）
@@ -124,7 +124,7 @@ NCS_project/
 
 ### 3.0 指令执行前置校验（第0条，V3.0新增，最高优先级）
 
-> 任何指令执行前必须先完成规则校验，详见 `.trae/rules/P0_01_rule_layer_management.md` V3.0
+> 任何指令执行前必须先完成规则校验，详见 `05_rules/02_rule_layer_management.md` V3.0
 
 ```
 收到用户指令 → 【第0步】规则前置校验 → 匹配流程/规则 → 按规则执行
@@ -295,9 +295,9 @@ NCS_project/
 
 | 文档 | 路径 | 用途 |
 |------|------|------|
-| 项目AI幻觉错误汇总台账 | `01_knowledge_base/hallucination_records/` | 记录幻觉案例 |
-| 无幻觉提问句式模板 | `01_knowledge_base/templates/` | 指导正确提问 |
-| AI幻觉避坑手册 | `01_knowledge_base/base_lib/hallucination_prevention_base/` | 全员学习参考 |
+| 项目AI幻觉错误汇总台账 | `01_01_knowledge_base/hallucination_records/` | 记录幻觉案例 |
+| 无幻觉提问句式模板 | `01_01_knowledge_base/templates/` | 指导正确提问 |
+| AI幻觉避坑手册 | `01_01_knowledge_base/base_lib/hallucination_prevention_base/` | 全员学习参考 |
 
 ---
 
@@ -307,7 +307,7 @@ NCS_project/
 2. **静默生效**：防幻觉规则静默生效，不改变原有使用习惯
 3. **默认本地存档**：所有资料默认仅本地存档，不自动向量入库，等待客户确认后再统一投喂
 4. **即时拦截**：违反溯源规则的编造内容，由工程规则管理师第一时间拦截纠正
-5. **无伤节流**：全员剔除客套话/重复话术/无效修饰，保留全部专业内容，一事一议，按需加载，详见 `.trae/rules/P3_01_token_efficiency_rules.md`
+5. **无伤节流**：全员剔除客套话/重复话术/无效修饰，保留全部专业内容，一事一议，按需加载，详见 `01_01_knowledge_base/05_rules/01_token_efficiency_rules.md`
 
 ---
 
@@ -326,66 +326,11 @@ NCS_project/
 | 维度 | 状态 |
 |------|------|
 | 智能体团队 | ✅ 10大智能体全部配置完成 |
-| 基础知识库 | ✅ 10个角色基础库已搭建（含专业知识） |
-| 向量知识库 | ✅ ChromaDB已入库，RAG语义检索可用 |
+| 基础知识库 | ✅ 10个角色基础库已搭建（66个知识块） |
 | 防幻觉体系 | ✅ 双层防幻觉框架已定型 |
 | 全格式文档处理 | ✅ 9大类格式全部支持 |
 | 双层提炼流程 | ✅ 流程规范v2.0已生效 |
-| 规则体系 | ✅ 17条规则全部阅读确认（P0×5 + P1×4 + P2×5 + P3×3） |
-
----
-
-## 十、M3工程落地进展（2026-05-19）
-
-### 10.1 重大整改
-
-| 问题 | 违反规则 | 处理方式 |
-|------|----------|----------|
-| 原M3.1-M3.5一步到位实现 | P0_03 VibeCoding三阶段、P2_02 小步快跑 | 代码归档至`archive/`，重新开发 |
-| 未编写XDC约束文档 | P2_05 Vivado工程完整性 | M3.0补充完整XDC约束体系 |
-| @V未执行合规检查 | P2_05 任务后合规检查 | 建立每步@V检查机制 |
-
-### 10.2 M3子节点进度
-
-| 节点 | 内容 | 状态 | 完成日期 |
-|:----:|------|:----:|----------|
-| **M3.0** | 顶层模块框架 + XDC约束 + Vivado TCL脚本 | ✅ 完成 | 2026-05-19 |
-| M3.1 | DDS信号发生器 | 🔄 待开始 | - |
-| M3.2 | ADC采集接口 | 🔄 待开始 | - |
-| M3.3 | CORDIC数字锁相 | 🔄 待开始 | - |
-| M3.4 | 扫描状态机 | 🔄 待开始 | - |
-| M3.5 | IIR低通滤波器 | 🔄 待开始 | - |
-
-### 10.3 M3.0交付物
-
-| 文件 | 路径 |
-|------|------|
-| `top_odmr.vhd` | `03_code/01_vhdl_modules/` |
-| `01_pins.xdc` | `03_code/02_constraints/` |
-| `02_timing.xdc` | `03_code/02_constraints/` |
-| `03_config.xdc` | `03_code/02_constraints/` |
-| `create_project.tcl` | `08_vivado_projects/odmr_zynq7020/` |
-
-### 10.4 固化流程（后续每个子模块必须遵守）
-
-```
-子模块开发（M3.x）
-    │
-    ▼
-Step 1: @H 编写VHDL模块 + 对应XDC约束
-    │
-    ▼
-Step 2: 更新 create_project.tcl（添加新模块）
-    │
-    ▼
-Step 3: 运行Vivado TCL脚本（综合→实现→比特流）
-    │
-    ▼
-Step 4: @V 合规检查（P2_05）
-    │
-    ├─ 通过 → 进入下一步
-    └─ 不通过 → 返回修正
-```
+| 项目专业知识库 | ⏳ 待上传专业PDF资料后生成 |
 
 ---
 

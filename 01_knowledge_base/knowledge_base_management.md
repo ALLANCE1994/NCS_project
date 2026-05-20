@@ -1,4 +1,4 @@
-﻿# MTC智能体知识库管理文档
+# MTC智能体知识库管理文档
 
 > **文档编号**：NV-FPGA-KB-007
 > **版本**：V1.0
@@ -174,7 +174,7 @@
 
 ## 六、文档同步闭环管理
 
-根据 `.trae/rules/P2_03_document_sync_management.md`，本文档纳入闭环管理：
+根据 `05_rules/06_document_sync_management.md`，本文档纳入闭环管理：
 
 | 检查项 | 要求 |
 |--------|------|
